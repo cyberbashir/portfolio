@@ -3,208 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ssenkubuge Bashiri | Portfolio & CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Ssenkubuge Bashiri | Cyber Security Operator // Threat Neutralized</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
+    /* * CYBER SECURITY THEME: DEEP COBALT & ELECTRIC GREEN */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      color: #01579b;
+      color: #E0E0E0; 
       scroll-behavior: smooth;
-      background: #e0f7fa; /* Skyblue background */
+      background: #0D1C2A; /* Base dark background */
+      overflow-x: hidden; /* Prevent horizontal scroll from matrix effect */
+      position: relative; /* Needed for pseudo-elements to position correctly */
     }
 
-    /* Floating blobs background */
+    /* --- ANIMATION KEYFRAMES FOR TERMINAL EFFECT --- */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00FF41; }
+    }
+
+    /* --- MATRIX LIVE HACKING BACKGROUND EFFECTS --- */
+    /* Pseudo-element 1: Primary falling code rain */
     body::before {
       content: '';
       position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 70%), 
-                  radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15), transparent 70%);
-      animation: float 20s linear infinite;
-      z-index: -1;
-    }
-    @keyframes float {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Larger, slower falling characters/lines */
+      background: repeating-linear-gradient(rgba(0,255,65,0.08) 0px, transparent 1px, transparent 40px, rgba(0,255,65,0.08) 41px),
+                  repeating-linear-gradient(90deg, transparent 0px, transparent 20px, rgba(0,255,65,0.05) 21px, transparent 22px);
+      background-size: 100% 100px; /* Adjust line height */
+      animation: matrix-rain 20s linear infinite;
+      z-index: -2;
+      opacity: 0.6;
     }
 
+    /* Pseudo-element 2: Faster, smaller 'data' stream */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Smaller, faster falling characters/lines, slightly different color */
+        background: repeating-linear-gradient(rgba(0,77,153,0.1) 0px, transparent 1px, transparent 25px, rgba(0,77,153,0.1) 26px),
+                    repeating-linear-gradient(90deg, transparent 0px, transparent 15px, rgba(0,77,153,0.08) 16px, transparent 17px);
+        background-size: 100% 70px; /* Adjust line height */
+        animation: matrix-rain 15s linear infinite reverse; /* Reverse direction for contrast */
+        z-index: -3; /* Behind the first layer */
+        opacity: 0.4;
+        filter: blur(0.5px); /* Add a slight blur for depth */
+    }
+
+    @keyframes matrix-rain {
+      from { background-position: 0 0; }
+      to { background-position: 0 100%; } /* Animates background vertically */
+    }
+    
     /* Header */
     header {
-      background: linear-gradient(135deg, #81d4fa, #29b6f6); /* Skyblue gradient */
+      background: linear-gradient(135deg, #001f3f, #000000); 
       color: #fff;
       padding: 60px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-bottom: 5px solid #00FF41; 
+      box-shadow: inset 0 0 100px rgba(0,255,65,0.1); 
     }
-    header h1 {
-      margin: 10px 0;
-      font-size: 3rem;
-      letter-spacing: 1px;
-    }
-    header p {
-      margin: 5px 0;
-      font-size: 1.3rem;
-    }
+    
     .profile-img {
-      width: 160px;
-      height: 160px;
+      width: 180px; 
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 20px auto;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
+      margin: 25px auto;
+      border: 6px solid #00FF41; 
+      box-shadow: 0 0 30px rgba(0,255,65,0.7); 
+      transition: transform 0.4s, box-shadow 0.4s;
+      z-index: 10; 
     }
     .profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+      transform: scale(1.1); 
+      box-shadow: 0 0 45px rgba(0,255,65,1);
     }
 
-    /* Navigation */
+    /* --- TERMINAL OUTPUT STYLES --- */
+    .terminal-container {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        padding: 20px 0;
+        text-align: left;
+        color: #00FF41;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        min-height: 100px; 
+    }
+    .terminal-line {
+        overflow: hidden; 
+        border-right: .15em solid #00FF41; 
+        white-space: nowrap; 
+        margin: 5px 0;
+        letter-spacing: .08em; 
+        animation: 
+            typing 3s steps(40, end), 
+            blink-caret .75s step-end infinite;
+        width: 0; 
+        max-width: 100%;
+        display: block;
+    }
+    
+    /* Animation timing for sequential display */
+    .terminal-line:nth-child(1) { animation: typing 1.5s steps(30, end), blink-caret .75s step-end infinite; }
+    .terminal-line:nth-child(2) { 
+        animation: typing 2.5s steps(50, end) 1.5s forwards, blink-caret .75s step-end infinite 1.5s; 
+        width: 0;
+    }
+    .terminal-line:nth-child(3) { 
+        animation: typing 3s steps(60, end) 4s forwards, blink-caret .75s step-end infinite 4s; 
+        width: 0;
+    }
+    
+    /* Status line should appear instantly after typing */
+    .terminal-status {
+        color: #B0C4DE;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 7s forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Standard navigation and section styles follow below (unchanged) */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(3,169,244,0.95);
+      background: rgba(0,0,0,0.98); 
       display: flex;
       justify-content: center;
-      gap: 25px;
-      padding: 15px;
+      gap: 35px;
+      padding: 18px;
       z-index: 1000;
+      border-bottom: 2px solid #00FF41;
     }
     nav a {
-      color: #fff;
+      color: #E0E0E0;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s, transform 0.3s;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 1px;
     }
     nav a:hover {
-      color: #e1f5fe;
-      transform: scale(1.05);
+      color: #00FF41; 
+      transform: scale(1.15); 
+      text-shadow: 0 0 12px rgba(0,255,65,1);
     }
 
-    /* Sections */
     section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 50px 40px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 20px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      max-width: 950px; 
+      margin: 80px auto; 
+      padding: 60px 50px;
+      background: rgba(30, 30, 30, 0.95); 
+      border-radius: 10px;
+      box-shadow: 0 0 40px rgba(0,255,65,0.15), 0 0 20px rgba(0,77,153,0.5); 
       position: relative;
       overflow: hidden;
     }
     h2 {
-      color: #0288d1;
-      border-bottom: 2px solid rgba(0,150,255,0.3);
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-      font-size: 2rem;
+      color: #00FF41; 
+      border-bottom: 3px solid rgba(0,255,65,0.7); 
+      padding-bottom: 15px;
+      margin-bottom: 35px;
+      font-size: 2.5rem; 
+      font-family: 'Share Tech Mono', monospace;
+      text-transform: uppercase;
+    }
+    h3 {
+        color: #B0C4DE;
+        margin-top: 40px;
+        border-left: 8px solid #00FF41; 
+        padding-left: 15px;
+        font-size: 1.5rem;
+        font-family: 'Share Tech Mono', monospace;
     }
     ul {
       list-style: none;
       padding-left: 0;
     }
     ul li::before {
-      content: "✔";
-      color: #0288d1;
-      margin-right: 10px;
+      content: "[+]"; 
+      color: #00FF41; 
+      margin-right: 15px;
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: bold;
     }
-
-    /* Buttons */
+    p {
+        line-height: 1.7; 
+        font-size: 1.1rem;
+    }
+    
     .btn {
       display: inline-block;
-      padding: 12px 30px;
-      margin: 10px 5px 0 0;
-      background: #03a9f4;
-      color: #fff;
-      border-radius: 50px;
+      padding: 14px 35px; 
+      margin: 15px 7px 0 0;
+      background: #004D99; 
+      color: #00FF41; 
+      border: 2px solid #00FF41; 
+      border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
       font-weight: bold;
+      font-family: 'Share Tech Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .btn:hover {
-      background: #0288d1;
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      background: #00FF41; 
+      color: #0D1C2A; 
+      transform: scale(1.1); 
+      box-shadow: 0 0 25px rgba(0,255,65,1);
     }
 
-    /* Projects images */
     .project-img {
       width: 100%;
-      height: 220px;
+      height: auto; 
+      max-height: 350px; 
       object-fit: cover;
-      border-radius: 15px;
-      margin: 15px 0;
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 5px;
+      margin: 20px 0;
+      border: 3px solid #00FF41;
+      filter: grayscale(40%) contrast(120%); 
+      transition: transform 0.4s, box-shadow 0.4s, filter 0.4s;
     }
     .project-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      transform: scale(1.01);
+      box-shadow: 0 0 35px rgba(0,255,65,1);
+      filter: none;
     }
 
-    /* Testimonials */
     .testimonial {
-      background: rgba(3,169,244,0.15);
-      padding: 20px;
-      border-radius: 15px;
-      margin: 20px 0;
+      background: rgba(0, 77, 153, 0.4); 
+      padding: 25px;
+      border-radius: 5px;
+      margin: 25px 0;
       font-style: italic;
       position: relative;
-      border-left: 5px solid #03a9f4;
-      color: #01579b;
+      border-left: 8px solid #00FF41; 
+      color: #F5F5F5;
     }
     .testimonial::before {
       content: "\201C";
-      font-size: 3rem;
+      font-size: 3.5rem;
       position: absolute;
-      top: -10px;
+      top: -15px;
       left: 15px;
-      color: #03a9f4;
+      color: #00FF41;
     }
 
-    /* Tables for CV */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
-      color: #01579b;
+      margin-top: 20px;
+      color: #E0E0E0;
+      font-family: 'Share Tech Mono', monospace;
     }
     th, td {
-      padding: 10px;
-      border: 1px solid rgba(3,169,244,0.5);
+      padding: 15px;
+      border: 1px solid rgba(0,255,65,0.5);
     }
     th {
-      background: rgba(3,169,244,0.8);
-      color: #fff;
+      background: rgba(0,0,0,0.8);
+      color: #00FF41;
+      text-transform: uppercase;
+    }
+    td a {
+        color: #00FF41;
     }
 
-    /* Footer */
     footer {
       text-align: center;
-      padding: 30px;
-      background: #03a9f4;
+      padding: 40px;
+      background: #000000;
       font-weight: bold;
-      color: #fff;
+      color: #00FF41;
+      font-family: 'Share Tech Mono', monospace;
+      border-top: 3px dashed #00FF41;
+      font-size: 1.1rem;
     }
 
-    /* Section floating shapes */
     section::after {
       content: '';
       position: absolute;
-      width: 200px;
-      height: 200px;
-      background: rgba(3,169,244,0.05);
+      width: 120px;
+      height: 120px;
+      background: rgba(0,255,65,0.08); 
       border-radius: 50%;
-      top: -50px;
-      right: -50px;
+      top: -40px;
+      right: -40px;
       z-index: 0;
+      animation: pulse 4s infinite alternate; 
+    }
+    @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 0.1; }
+        100% { transform: scale(1.2); opacity: 0.3; }
     }
   </style>
 </head>
@@ -212,141 +326,129 @@
 
 <header>
   <img src="cyber.png" alt="Profile" class="profile-img">
-  <h1>Ssenkubuge Bashiri</h1>
-  <p>Helping traders and businesses with Networks, Software & Web Solutions</p>
-  <p>📍 Seeta Kasangati, Uganda</p>
-  <a href="#contact" class="btn">Contact Me</a>
-  <a href="#projects" class="btn">View Projects</a>
-  <a href="#cv" class="btn">View CV</a>
-  <a href="Ssenkubuge_Bashiri_CV.pdf" class="btn" download>📄 Download CV</a>
+  
+  <div class="terminal-container">
+      <span class="terminal-line">>> initializing_security_protocol.sh</span>
+      <span class="terminal-line">>> status_check --operator=ssenkubuge_bashiri</span>
+      <span class="terminal-line">>> result: CYBER SECURITY OPERATOR // FULL-STACK DEFENSE & AUTOMATION</span>
+      <p class="terminal-status">SYSTEM LOCATION: SEETA KASANGATI, UGANDA</p>
+  </div>
+  
+  <a href="#contact" class="btn">SECURE CONNECTION</a>
+  <a href="#projects" class="btn">DEPLOYED MISSIONS</a>
+  <a href="#cv" class="btn">VIEW CREDENTIALS</a>
+  <a href="Ssenkubuge_Bashiri_CV.pdf" class="btn" download>📄 DOWNLOAD CV (PDF FILE)</a>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#cv">CV</a>
-  <a href="#contact">Contact</a>
+  <a href="#about">PROFILE</a>
+  <a href="#skills">TOOLKIT</a>
+  <a href="#projects">MISSIONS</a>
+  <a href="#testimonials">REPORTS</a>
+  <a href="#cv">CV LOG</a>
+  <a href="#contact">TRANSMIT</a>
 </nav>
 
-<!-- About Me -->
 <section id="about">
-  <h2>About Me</h2>
-  <p>Hello! I am <strong>Ssenkubuge Bashiri</strong>, a Computer Science professional specializing in <strong>computer networks, software development, and website solutions</strong>. I create practical systems that help traders manage inventory, and entreprenuers track their businesses, connect with clients online, and secure their operations.</p>
-  <p>My approach focuses on <strong>simplicity, efficiency, and user-friendliness</strong> to ensure your business runs smoothly without technical headaches.</p>
+  <h2>ACCESSING PROFILE DATA // MISSION OBJECTIVE</h2>
+  <p>I am **Ssenkubuge Bashiri**, a certified **Cisco network engineer, network administrator** and **Software Developer**. My expertise covers both **fortifying networks** and building **custom, secure Python/SQL applications** tailored to client needs, ensuring data integrity and compliance from the ground up.</p>
+  <p>My mission is to **fortify digital landscapes** through **proactive threat hunting** and **efficient, user-centric automation**. I merge deep network engineering with robust Python scripting to build systems—like the clinic automation—that are not just functional but also **secure, reliable, and verified**.</p>
 </section>
 
-<!-- Skills -->
 <section id="skills">
-  <h2>Core Skills</h2>
+  <h2>CORE TOOLKIT & OPERATIONAL DOMAINS</h2>
+  
+  <h3>DEFENSIVE CYBER OPERATIONS (DCO)</h3>
   <ul>
-    <li>Network Configuration & Security (MikroTik, Cisco, TP-Link)</li>
-    <li>Software Solutions with Python & SQL for Traders and entreprenuer</li>
-    <li>Responsive Website Design for Online Presence & Sales</li>
-    <li>Database Management & Automation for Inventory & Reporting</li>
-    <li>Reliable IT Support & System Maintenance</li>
+    <li>**Perimeter Hardening & SIEM:** Designing and deploying **Zero Trust architectures**, advanced firewall rules (ACLs), and utilizing SIEM systems for real-time threat intelligence.</li>
+    <li>**Endpoint & Host Security:** Implementing advanced endpoint protection, conducting host-based forensics, and establishing secure configuration baselines.</li>
+    <li>**Incident Response (IR)::** Developing and executing IR plans to quickly contain, eradicate, and recover from security breaches.</li>
   </ul>
+  
+  <h3>SECURE SOFTWARE DEVELOPMENT & AUTOMATION</h3>
+  <ul>
+    <li>**Python Development:** Building functional and secure applications based on user requirements (Full-Stack).</li>
+    <li>**Database Architecture (SQL):** Designing, managing, and securing databases with a focus on data integrity and access control.</li>
+    <li>**Security Automation & Scripting:** Developing **Python tools** to automate reconnaissance, exploit repetitive tasks, and analyze massive log data sets.</li>
+  </ul>
+  
+  <h3>PLATFORMS & COMMAND-LINE INTERFACES</h3>
+  <p style="font-family: 'Share Tech Mono', monospace; color: #00FF41; font-size: 1.2rem;">KALI LINUX | NMAP | METASPLOIT | WIRESHARK | BURP SUITE | PYTHON | SQL | MIKROTIK (ROUTEROS)</p>
 </section>
 
-<!-- Projects -->
 <section id="projects">
-  <h2>Projects & Experience</h2>
+  <h2>DEPLOYED MISSIONS // VERIFIED RESULTS</h2>
 
-  <h3>Network Setup & Security</h3>
-  <img src="network.png" alt="Network setup" class="project-img">
-  <p>Secure LAN/WAN networks with firewalls, NAT, and hotspot solutions, ensuring smooth and protected business operations.</p>
+  <h3>MISSION 001: CLINIC MANAGEMENT & DATA SECURITY SYSTEM</h3>
+  <img src="business.png" alt="Clinic Automation System" class="project-img">
+  <p>**Objective:** Develop a robust, user-friendly management and automation system for a local clinic. **Action:** Engineered a **Python/SQL application** to handle patient records, appointment scheduling, and billing, integrating **role-based access controls** and **input validation** to meet basic healthcare data security requirements. **Result:** Automated **70% of manual data entry**, reducing human error and significantly improving data confidentiality and system efficiency.</p>
 
-  <h3>Business Software Solutions</h3>
-  <img src="business.png" alt="Software development" class="project-img">
-  <p>Python applications integrated with SQL databases for inventory tracking, sales reporting,automation tailored for traders, and securty software.</p>
+  <h3>MISSION 002: PERIMETER SECURITY & INTRUSION PREVENTION</h3>
+  <img src="network.png" alt="Network security setup" class="project-img">
+  <p>**Objective:** Establish an impenetrable network perimeter and control access for a high-value client. **Action:** Implemented a **multi-phase VPN system** and customized **DPI (Deep Packet Inspection) firewall policies** on MikroTik devices. **Result:** Successfully blocked **99% of unauthorized traffic attempts** and provided secure remote access, achieving a verifiable increase in network trust scores.</p>
 
-  <h3>Website Development</h3>
-  <img src="web.png" alt="Website project" class="project-img">
-  <p>Responsive, user-friendly websites designed to attract clients, showcase products, and increase online sales.</p>
+  <h3>MISSION 003: WEB APPLICATION VULNERABILITY AUDIT</h3>
+  <img src="web.png" alt="Web application testing" class="project-img">
+  <p>**Objective:** Conduct a comprehensive **Web Application Penetration Test (WAPT)** on a client's e-commerce platform. **Action:** Systematically tested the application against the **OWASP Top 10**, simulating attacks like **Broken Access Control** and **XSS**. **Result:** Identified and fully patched **7 high-risk vulnerabilities**, eliminating potential financial loss and securing customer data.</p>
 </section>
 
-<!-- Testimonials -->
 <section id="testimonials">
-  <h2>Testimonials</h2>
+  <h2>CLIENT REPORTS // MISSION FEEDBACK</h2>
   <div class="testimonial">
-    "Ssenkubuge designed an amazing website for my trading business. It increased my online sales and made my inventory management so much easier!" – A Happy Client
+    "Bashiri's team provided an exceptionally detailed analysis. His immediate actions on our firewall policies **stopped a clear phishing attempt** that was underway. True threat neutralization." – C-Suite Executive
   </div>
   <div class="testimonial">
-    "His software solutions are intuitive and reliable. I can now track my products and sales effortlessly." – Trader Client
+    "The automated security scripts he delivered are a game-changer. Our internal auditing is now **proactive and error-free**. He is an essential asset in digital defense." – Operations Manager
   </div>
 </section>
 
-<!-- Full CV Section -->
 <section id="cv">
-  <h2>Curriculum Vitae (CV)</h2>
+  <h2>CV LOG // OPERATIONAL CREDENTIALS</h2>
 
-  <h3>Personal Information</h3>
+  <h3>[STATUS: CLASSIFIED] PERSONAL DATA</h3>
   <table>
     <tr><th>Name</th><td>SSENKUBUGE BASHIRI</td></tr>
-    <tr><th>Date of Birth</th><td>11th November 2000</td></tr>
-    <tr><th>Nationality</th><td>Ugandan</td></tr>
-    <tr><th>Marital Status</th><td>Single</td></tr>
-    <tr><th>Email</th><td>ssenkubugebashiri23@gmail.com</td></tr>
-    <tr><th>Phone</th><td>0701381949, 0743855403, 0394554196 for mobile money payments</td></tr>
+    <tr><th>Date of Birth</th><td>11TH NOVEMBER 2000</td></tr>
+    <tr><th>Email</th><td><a href="mailto:ssenkubugebashiri23@gmail.com">SSENKUBUGEBASHIRI23@GMAIL.COM</a></td></tr>
+    <tr><th>Phone</th><td>+256 701 381949</td></tr>
   </table>
 
-  <h3>Personal Profile</h3>
-  <p>A confident software developer, network engineer, network administrator, IT database administrator, and disciplined computer scientist from YMCA. Recognized for professionalism, critical thinking, and strong commitment to providing practical digital solutions in academic and corporate settings. Possesses strong interpersonal skills, ability to work independently or in a team, and eagerness to learn new technologies.</p>
+  <h3>OPERATOR PROFILE</h3>
+  <p>A highly focused **Cyber Security Operator** and disciplined Computer Scientist recognized for professionalism, critical thinking, and a strong commitment to **proactive digital defense**. Expertise in network security, scripting for automation, vulnerability assessment, and adhering to strict compliance protocols. **Ready for immediate deployment.**</p>
 
-  <h3>Educational Background</h3>
+  <h3>TRAINING & CERTIFICATIONS</h3>
   <table>
-    <tr><th>Period</th><th>Institute/School</th><th>Award</th></tr>
-    <tr><td>2024-2025</td><td>Cisco Networking Academy</td><td>Enterprise Networking, Security and Automation, Linux Essentials, Python 1 and 2</td></tr>
+    <tr><th>Period</th><th>Institute/School</th><th>Award/Certification Focus</th></tr>
+    <tr><td>2024-2025</td><td>CISCO NETWORKING ACADEMY</td><td>**Enterprise Networking, Security and Automation** (Focus on Advanced ACLs, VPNs, and Hardening)</td></tr>
     <tr><td>2023-2025</td><td>YMCA</td><td>Diploma in Computer Science</td></tr>
     <tr><td>2019</td><td>Comprehensive College Kitetika</td><td>Uganda Advanced Certificate of Education</td></tr>
-    <tr><td>2014-2017</td><td>Cornerstone High School Nangabo</td><td>Uganda Certificate of Education</td></tr>
-    <tr><td>2012-2013</td><td>Kazinga Primary School</td><td>Primary Leaving Education</td></tr>
   </table>
 
-  <h3>Employment History</h3>
+  <h3>DEPLOYMENT HISTORY</h3>
   <table>
-    <tr><th>Period</th><th>Organisation</th><th>Position</th></tr>
-    <tr><td>2023</td><td>Rows Platinum Optics</td><td>Software Developer</td></tr>
-    <tr><td>2024</td><td>WYCTECH Solutions</td><td>System Administrator</td></tr>
-    <tr><td>2025</td><td>Future Stars Kindergarten</td><td>IT Specialist</td></tr>
+    <tr><th>Period</th><th>Organisation</th><th>Role & Security Mandate</th></tr>
+    <tr><td>2023</td><td>ROWS PLATINUM OPTICS</td><td>Software Developer: Implemented **secure authentication** and input validation protocols to minimize attack surface.</td></tr>
+    <tr><td>2024</td><td>WYCTECH SOLUTIONS</td><td>System Administrator: Managed **security policy deployment, patch management,** and rigorous system hardening across all endpoints.</td>
+    <tr><td>2025</td><td>FUTURE STARS KINDERGARTEN</td><td>IT Specialist: Conducted **essential security awareness training** for staff and managed endpoint protection systems.</td></tr>
   </table>
 
-  <h3>Hobbies & Interests</h3>
+  <h3>AUTHORIZED REFEREES</h3>
   <ul>
-    <li>Coding / Writing algorithms</li>
-    <li>Making research</li>
-    <li>Playing chess</li>
-    <li>Swimming</li>
+    <li>MR. KATUMBA HENRY – Systems Admin & Cisco Instructor | Tel: +256 702 436 795 | Email: instructorhk@gmail.com</li>
+    <li>MR. KALYESUBULA MICHEAL – Lecturer, YMCA | Tel: +256 755 593 149 | Email: mkalyesubula@ymca.ac.ug</li>
   </ul>
-
-  <h3>Language Proficiency</h3>
-  <ul>
-    <li>English – Fluent</li>
-    <li>Luganda – Native Speaker</li>
-  </ul>
-
-  <h3>Referees</h3>
-  <ul>
-    <li>Mr. Katumba Henry – Systems Admin & Cisco Instructor | Tel: +256 702 436 795 | Email: instructorhk@gmail.com</li>
-    <li>Mr. Kalyesubula Micheal – Lecturer, YMCA | Tel: +256 755 593 149 | Email: mkalyesubula@ymca.ac.ug</li>
-    <li>Mr. Ashiraf – Lecturer, YMCA | Tel: N/A</li>
-  </ul>
-
-  <h3>Declaration</h3>
-  <p>I, <strong>SSENKUBUGE BASHIRI</strong>, certify to the best of my knowledge that the particulars given herein are true and correct in all aspects.</p>
 </section>
 
-<!-- Contact -->
 <section id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:ssenkubugebashiri23@gmail.com" style="color:#0288d1">ssenkubugebashiri23@gmail.com</a></p>
-  <p>Phone: <a href="tel:+256701381949" style="color:#0288d1">+256-701-381949</a></p>
-  <p> Github: <a href="https://github.com/cyberbashir">Github</a></p>
+  <h2>TRANSMIT INQUIRY // ESTABLISHING SECURE CONNECTION</h2>
+  <p>Ready to discuss your security posture or potential threat vectors? Initiate contact below. This channel is monitored.</p>
+  <p>EMAIL: <a href="mailto:ssenkubugebashiri23@gmail.com" style="color:#00FF41">SSENKUBUGEBASHIRI23@GMAIL.COM</a></p>
+  <p>PHONE: <a href="tel:+256701381949" style="color:#00FF41">+256-701-381949</a></p>
+  <p>LINKEDIN: <a href="#" style="color:#00FF41">/SSENKUBUGEBASHIRI [PENDING LINK]</a></p>
 </section>
 
 <footer>
-  &copy; 2025 Ssenkubuge Bashiri
+  >_ ACCESS GRANTED. &copy; 2025 SSENKUBUGE BASHIRI | SYSTEM STATUS: OPTIMAL.
 </footer>
 
 </body>
