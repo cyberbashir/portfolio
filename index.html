@@ -3,1187 +3,495 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberSoft.ug — Ssenkubuge Bashiri | Software & Networking</title>
+  <title>Ssenkubuge Bashiri — Software Developer & Cisco Network Engineer</title>
   <meta name="description" content="Custom desktop software and Cisco networking for schools, clinics, shops and organisations in Uganda. Buy once, own forever. No subscriptions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --blue: #185FA5;
-      --blue-bg: #E6F1FB;
-      --blue-text: #0C447C;
-      --teal: #1D9E75;
-      --teal-bg: #E1F5EE;
-      --teal-text: #085041;
-      --amber: #BA7517;
-      --amber-bg: #FAEEDA;
-      --amber-text: #633806;
-      --coral: #993C1D;
-      --coral-bg: #FAECE7;
-      --coral-text: #712B13;
-      --ink: #0d0d0d;
-      --ink2: #444;
-      --ink3: #888;
-      --paper: #ffffff;
-      --surface: #f5f6f7;
-      --line: rgba(0,0,0,0.09);
-      --r: 12px;
+      --dark: #0a0a0a;
+      --dark2: #111111;
+      --dark3: #1a1a1a;
+      --mid: #3a3a3a;
+      --muted: #666;
+      --muted2: #999;
+      --light: #f0ede8;
+      --white: #ffffff;
+      --gold: #c9a84c;
+      --gold2: #e8c97a;
+      --gold-dim: rgba(201,168,76,0.12);
+      --gold-dim2: rgba(201,168,76,0.06);
+      --line: rgba(255,255,255,0.07);
+      --r: 4px; --r2: 8px; --r3: 12px;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--surface);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--paper);
-      border-bottom: 0.5px solid var(--line);
-      padding: 0 2rem;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 200;
-    }
-
-    .logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 2px;
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .logo span { color: var(--blue); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink2);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--ink); }
-
-    .nav-cta {
-      background: var(--ink);
-      color: #fff;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.15s;
-    }
-    .nav-cta:hover { opacity: 0.82; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--ink);
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--paper);
-      border-bottom: 0.5px solid var(--line);
-      padding: 72px 2rem 64px;
-    }
-
-    .hero-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 52px;
-      align-items: start;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: var(--blue-bg);
-      color: var(--blue-text);
-      font-size: 11px;
-      font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      letter-spacing: 0.3px;
-    }
-
-    .hero-tag-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-      flex-shrink: 0;
-    }
-
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 72px;
-      line-height: 0.93;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
-      color: var(--ink);
-    }
-
-    .hero h1 em {
-      color: var(--blue);
-      font-style: normal;
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      color: var(--ink2);
-      line-height: 1.72;
-      max-width: 500px;
-      margin-bottom: 30px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      padding: 11px 24px;
-      border-radius: 9px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s;
-    }
-    .btn-primary:hover { background: var(--blue-text); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-      border: 0.5px solid var(--line);
-      padding: 11px 24px;
-      border-radius: 9px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s;
-    }
-    .btn-ghost:hover { background: var(--surface); }
-
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      padding-top: 28px;
-      border-top: 0.5px solid var(--line);
-      flex-wrap: wrap;
-    }
-
-    .stat-n {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .stat-l {
-      font-size: 11px;
-      color: var(--ink3);
-      margin-top: 3px;
-    }
-
-    /* PROFILE CARD */
-    .profile-card {
-      background: var(--surface);
-      border: 0.5px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-    .profile-avatar {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: var(--blue-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      color: var(--blue-text);
-      margin-bottom: 14px;
-    }
-
-    .profile-name {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 2px;
-    }
-
-    .profile-title {
-      font-size: 12px;
-      color: var(--ink3);
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
-
-    .profile-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .pstat {
-      background: var(--paper);
-      border-radius: 8px;
-      padding: 10px 12px;
-    }
-    .pstat-n {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .pstat-l {
-      font-size: 10px;
-      color: var(--ink3);
-      margin-top: 2px;
-    }
-
-    .profile-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-
-    .pill {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-    .pill-blue { background: var(--blue-bg); color: var(--blue-text); }
-    .pill-teal { background: var(--teal-bg); color: var(--teal-text); }
-    .pill-amber { background: var(--amber-bg); color: var(--amber-text); }
-
-    .profile-contacts { display: flex; flex-direction: column; gap: 8px; }
-
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--ink2);
-      text-decoration: none;
-    }
-    .contact-row:hover { color: var(--blue); }
-
-    .contact-ico {
-      width: 28px;
-      height: 28px;
-      border-radius: 7px;
-      background: var(--surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 56px 2rem;
-    }
-
-    .sec-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .sec-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ink3);
-      margin-bottom: 6px;
-    }
-
-    .sec-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 40px;
-      letter-spacing: 0.5px;
-      color: var(--ink);
-      line-height: 1;
-    }
-
-    hr.divider {
-      border: none;
-      border-top: 0.5px solid var(--line);
-    }
-
-    /* ── FILTER TABS ── */
-    .filter-tabs {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .ftab {
-      padding: 6px 15px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 0.5px solid var(--line);
-      background: var(--paper);
-      color: var(--ink2);
-      font-family: 'Space Grotesk', sans-serif;
-      transition: all 0.12s;
-    }
-    .ftab.on { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .ftab:hover:not(.on) { border-color: var(--blue); color: var(--blue); }
-
-    /* ── SOFTWARE GRID ── */
-    .sw-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .sw-card {
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
-      cursor: pointer;
-      transition: border-color 0.12s, transform 0.12s;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    .sw-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .card-ico {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-    }
-
-    .card-badge {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-    .badge-blue { background: var(--blue-bg); color: var(--blue-text); }
-    .badge-teal { background: var(--teal-bg); color: var(--teal-text); }
-    .badge-amber { background: var(--amber-bg); color: var(--amber-text); }
-    .badge-coral { background: var(--coral-bg); color: var(--coral-text); }
-
-    .card-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .card-desc {
-      font-size: 12px;
-      color: var(--ink2);
-      line-height: 1.6;
-      margin-bottom: 14px;
-      flex: 1;
-    }
-
-    .card-feats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 16px;
-    }
-
-    .feat {
-      font-size: 10px;
-      color: var(--ink3);
-      background: var(--surface);
-      border: 0.5px solid var(--line);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-
-    .card-foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 14px;
-      border-top: 0.5px solid var(--line);
-    }
-
-    .card-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      color: var(--ink);
-      line-height: 1;
-    }
-
-    .card-once {
-      font-size: 10px;
-      color: var(--ink3);
-      margin-top: 2px;
-    }
-
-    .card-cta {
-      background: var(--blue-bg);
-      color: var(--blue-text);
-      border: none;
-      padding: 7px 14px;
-      border-radius: 7px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      font-family: 'Space Grotesk', sans-serif;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.12s, color 0.12s;
-    }
-    .card-cta:hover { background: var(--blue); color: #fff; }
-
-    /* ── NETWORKING ── */
-    .net-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .net-card {
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
-      transition: border-color 0.12s;
-    }
-    .net-card:hover { border-color: var(--blue); }
-
-    .net-ico {
-      width: 42px;
-      height: 42px;
-      border-radius: 9px;
-      background: var(--blue-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      margin-bottom: 14px;
-    }
-
-    .net-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .net-desc {
-      font-size: 12px;
-      color: var(--ink2);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .net-from { font-size: 10px; color: var(--ink3); }
-
-    .net-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
-      color: var(--blue-text);
-    }
-
-    /* ── PROJECTS ── */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-    }
-
-    .proj-card {
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: border-color 0.12s, transform 0.12s;
-    }
-    .proj-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-
-    .proj-img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-      background: var(--surface);
-    }
-
-    .proj-body { padding: 18px 20px; }
-
-    .proj-tag {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-
-    .proj-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .proj-desc {
-      font-size: 12px;
-      color: var(--ink2);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .proj-result {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--teal-text);
-      background: var(--teal-bg);
-      border-radius: 6px;
-      padding: 7px 10px;
-    }
-
-    /* ── WHY ── */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .why-card {
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      padding: 22px;
-    }
-
-    .why-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 42px;
-      color: var(--line);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .why-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .why-desc {
-      font-size: 12px;
-      color: var(--ink2);
-      line-height: 1.65;
-    }
-
-    /* ── CTA STRIP ── */
-    .cta-wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 2rem 56px;
-    }
-
-    .cta-strip {
-      background: var(--blue);
-      border-radius: 16px;
-      padding: 44px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .cta-strip h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 34px;
-      color: #fff;
-      margin-bottom: 6px;
-      letter-spacing: 0.5px;
-    }
-
-    .cta-strip p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.72);
-      max-width: 400px;
-      line-height: 1.65;
-    }
-
-    .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
-
-    .btn-white {
-      background: #fff;
-      color: var(--blue-text);
-      border: none;
-      padding: 11px 22px;
-      border-radius: 9px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: opacity 0.15s;
-    }
-    .btn-white:hover { opacity: 0.9; }
-
-    .btn-outline-w {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.35);
-      padding: 11px 22px;
-      border-radius: 9px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s;
-    }
-    .btn-outline-w:hover { background: rgba(255,255,255,0.1); }
-
-    /* ── TESTIMONIALS ── */
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .test-card {
-      background: var(--paper);
-      border: 0.5px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
-    }
-
-    .test-quote {
-      font-size: 13px;
-      color: var(--ink2);
-      line-height: 1.7;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .test-author {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .test-role { font-size: 11px; color: var(--ink3); margin-top: 2px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--paper);
-      border-top: 0.5px solid var(--line);
-      padding: 32px 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: var(--ink);
-    }
-    .footer-logo span { color: var(--blue); }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: var(--ink3);
-      text-decoration: none;
-    }
-    .footer-links a:hover { color: var(--blue); }
-
-    .footer-copy {
-      font-size: 11px;
-      color: var(--ink3);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .profile-card { display: none; }
-      .hero h1 { font-size: 50px; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .cta-strip { flex-direction: column; padding: 32px 24px; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-    }
-
-    @media (max-width: 480px) {
-      .why-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 40px; }
-      .sec-title { font-size: 32px; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--light); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .a1{animation:fadeUp .7s ease both;}
+    .a2{animation:fadeUp .7s .1s ease both;}
+    .a3{animation:fadeUp .7s .2s ease both;}
+    .a4{animation:fadeUp .7s .3s ease both;}
+    .a5{animation:fadeUp .7s .4s ease both;}
+
+    /* NAV */
+    nav { position:sticky; top:0; z-index:300; background:rgba(10,10,10,0.93); backdrop-filter:blur(16px); border-bottom:0.5px solid var(--line); padding:0 2.5rem; height:62px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white); text-decoration:none; letter-spacing:.5px; }
+    .logo span { color:var(--gold); }
+    .nav-links { display:flex; align-items:center; gap:28px; }
+    .nav-links a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted2); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-cta { background:var(--gold); color:var(--dark); border:none; padding:8px 20px; border-radius:var(--r2); font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; cursor:pointer; text-decoration:none; display:inline-block; transition:background .2s,transform .15s; }
+    .nav-cta:hover { background:var(--gold2); transform:translateY(-1px); }
+
+    /* HERO */
+    .hero { display:grid; grid-template-columns:1fr 440px; min-height:92vh; border-bottom:0.5px solid var(--line); }
+    .hero-left { padding:80px 3rem 80px 2.5rem; display:flex; flex-direction:column; justify-content:center; border-right:0.5px solid var(--line); }
+    .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:28px; }
+    .eline { width:32px; height:0.5px; background:var(--gold); }
+    .etxt { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:68px; font-weight:700; line-height:.97; color:var(--white); margin-bottom:10px; }
+    .hero h1 em { font-style:italic; color:var(--gold); }
+    .hero-name { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:400; color:var(--muted2); letter-spacing:1px; margin-bottom:26px; }
+    .hero-desc { font-size:15px; font-weight:300; color:var(--muted2); line-height:1.8; max-width:510px; margin-bottom:34px; }
+    .hero-desc strong { color:var(--light); font-weight:500; }
+    .hero-btns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:48px; }
+    .btn-gold { background:var(--gold); color:var(--dark); border:none; padding:12px 26px; border-radius:var(--r2); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; cursor:pointer; text-decoration:none; display:inline-block; transition:background .2s,transform .15s; }
+    .btn-gold:hover { background:var(--gold2); transform:translateY(-1px); }
+    .btn-outline { background:transparent; color:var(--light); border:0.5px solid rgba(255,255,255,.18); padding:12px 26px; border-radius:var(--r2); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:400; cursor:pointer; text-decoration:none; display:inline-block; transition:border-color .2s,background .2s; }
+    .btn-outline:hover { border-color:var(--gold); background:var(--gold-dim); }
+    .hero-stats { display:flex; gap:36px; padding-top:34px; border-top:0.5px solid var(--line); flex-wrap:wrap; }
+    .hstat-n { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:600; color:var(--gold); line-height:1; }
+    .hstat-l { font-size:11px; color:var(--muted); margin-top:4px; letter-spacing:.3px; }
+
+    /* HERO PHOTO */
+    .hero-right { position:relative; overflow:hidden; background:var(--dark2); }
+    .hero-photo { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; opacity:.88; filter:grayscale(15%) contrast(1.06); transition:opacity .4s; }
+    .hero-photo:hover { opacity:1; }
+    .photo-overlay { position:absolute; inset:0; background:linear-gradient(to right,rgba(10,10,10,.4) 0%,transparent 45%),linear-gradient(to top,rgba(10,10,10,.75) 0%,transparent 55%); pointer-events:none; }
+    .photo-caption { position:absolute; bottom:28px; left:28px; right:28px; }
+    .photo-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--white); margin-bottom:4px; }
+    .photo-role { font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--gold); }
+    .photo-badges { display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
+    .pbadge { font-size:10px; letter-spacing:.5px; padding:3px 10px; border-radius:20px; border:0.5px solid rgba(201,168,76,.4); color:var(--gold2); background:rgba(201,168,76,.08); }
+
+    /* SHARED SECTION */
+    .section { max-width:1120px; margin:0 auto; padding:72px 2.5rem; }
+    hr.div { border:none; border-top:0.5px solid var(--line); }
+    .seyebrow { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .sline { width:24px; height:0.5px; background:var(--gold); }
+    .stag { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+    .stitle { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:700; color:var(--white); line-height:1.05; margin-bottom:8px; }
+    .stitle em { font-style:italic; color:var(--gold); }
+    .ssub { font-size:14px; font-weight:300; color:var(--muted); margin-bottom:36px; }
+    .sec-row { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:36px; }
+
+    /* FILTER */
+    .ftabs { display:flex; gap:6px; flex-wrap:wrap; }
+    .ftab { padding:7px 16px; border-radius:20px; font-size:11px; letter-spacing:.5px; cursor:pointer; border:0.5px solid rgba(255,255,255,.12); background:transparent; color:var(--muted2); font-family:'DM Sans',sans-serif; transition:all .15s; }
+    .ftab.on { background:var(--gold); color:var(--dark); border-color:var(--gold); font-weight:500; }
+    .ftab:hover:not(.on) { border-color:var(--gold); color:var(--gold); }
+
+    /* SW GRID */
+    .sw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1px; background:var(--line); border:0.5px solid var(--line); border-radius:var(--r3); overflow:hidden; }
+    .sw-card { background:var(--dark2); padding:28px; cursor:pointer; transition:background .2s; display:flex; flex-direction:column; }
+    .sw-card:hover { background:var(--dark3); }
+    .ctop { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; }
+    .cico { width:46px; height:46px; border-radius:var(--r2); display:flex; align-items:center; justify-content:center; font-size:22px; border:0.5px solid rgba(255,255,255,.06); }
+    .cbadge { font-size:10px; letter-spacing:.5px; padding:3px 9px; border-radius:20px; }
+    .bb { background:rgba(45,111,189,.15); color:#7fb3f0; border:0.5px solid rgba(45,111,189,.3); }
+    .bt { background:rgba(26,144,104,.15); color:#6dd4af; border:0.5px solid rgba(26,144,104,.3); }
+    .ba { background:rgba(201,168,76,.12); color:var(--gold2); border:0.5px solid rgba(201,168,76,.25); }
+    .bc { background:rgba(153,60,29,.15); color:#f0a080; border:0.5px solid rgba(153,60,29,.3); }
+    .cname { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white); margin-bottom:8px; line-height:1.2; }
+    .cdesc { font-size:13px; font-weight:300; color:var(--muted); line-height:1.65; margin-bottom:16px; flex:1; }
+    .cfeats { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px; }
+    .feat { font-size:10px; color:var(--muted2); background:rgba(255,255,255,.04); border:0.5px solid rgba(255,255,255,.08); padding:3px 8px; border-radius:var(--r); }
+    .cfoot { display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:0.5px solid var(--line); }
+    .cprice { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; color:var(--gold); line-height:1; }
+    .conce { font-size:10px; color:var(--muted); margin-top:3px; }
+    .ccta { background:var(--gold-dim); color:var(--gold2); border:0.5px solid rgba(201,168,76,.25); padding:8px 16px; border-radius:var(--r2); font-size:11px; font-weight:500; cursor:pointer; font-family:'DM Sans',sans-serif; text-decoration:none; display:inline-block; transition:background .15s,color .15s; }
+    .ccta:hover { background:var(--gold); color:var(--dark); }
+
+    /* NETWORKING */
+    .net-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1px; background:var(--line); border:0.5px solid var(--line); border-radius:var(--r3); overflow:hidden; }
+    .net-card { background:var(--dark2); padding:28px; transition:background .2s; }
+    .net-card:hover { background:var(--dark3); }
+    .nico { width:40px; height:40px; border-radius:var(--r2); background:var(--gold-dim); border:0.5px solid rgba(201,168,76,.2); display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:16px; }
+    .nname { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; color:var(--white); margin-bottom:8px; }
+    .ndesc { font-size:13px; font-weight:300; color:var(--muted); line-height:1.65; margin-bottom:16px; }
+    .nfrom { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:2px; }
+    .nprice { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--gold); }
+
+    /* PROJECTS */
+    .proj-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px; }
+    .proj-card { background:var(--dark2); border:0.5px solid var(--line); border-radius:var(--r3); overflow:hidden; transition:border-color .2s,transform .2s; }
+    .proj-card:hover { border-color:rgba(201,168,76,.35); transform:translateY(-3px); }
+    .proj-img { width:100%; height:180px; object-fit:cover; display:block; filter:grayscale(20%) contrast(1.05); transition:filter .3s; }
+    .proj-card:hover .proj-img { filter:grayscale(0%); }
+    .proj-body { padding:22px; }
+    .ptag { display:inline-block; font-size:10px; letter-spacing:.5px; padding:3px 9px; border-radius:20px; margin-bottom:12px; }
+    .pname { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white); margin-bottom:8px; line-height:1.25; }
+    .pdesc { font-size:13px; font-weight:300; color:var(--muted); line-height:1.65; margin-bottom:14px; }
+    .presult { font-size:12px; color:#6dd4af; background:rgba(26,144,104,.1); border:0.5px solid rgba(26,144,104,.2); border-radius:var(--r2); padding:8px 12px; }
+
+    /* WHY */
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:0.5px solid var(--line); border-radius:var(--r3); overflow:hidden; }
+    .why-card { background:var(--dark2); padding:32px 28px; transition:background .2s; }
+    .why-card:hover { background:var(--dark3); }
+    .wnum { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:400; color:rgba(201,168,76,.14); line-height:1; margin-bottom:16px; }
+    .wtitle { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; color:var(--white); margin-bottom:10px; }
+    .wdesc { font-size:13px; font-weight:300; color:var(--muted); line-height:1.7; }
+
+    /* TESTIMONIALS */
+    .test-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+    .test-card { background:var(--dark2); border:0.5px solid var(--line); border-radius:var(--r3); padding:28px; }
+    .tqm { font-family:'Cormorant Garamond',serif; font-size:60px; color:rgba(201,168,76,.15); line-height:.7; margin-bottom:16px; display:block; }
+    .tq { font-size:14px; font-weight:300; color:var(--muted2); line-height:1.75; font-style:italic; margin-bottom:20px; }
+    .tline { width:24px; height:0.5px; background:var(--gold); margin-bottom:12px; }
+    .tauth { font-size:13px; font-weight:500; color:var(--white); }
+    .trole { font-size:11px; color:var(--muted); margin-top:3px; }
+
+    /* ABOUT */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border:0.5px solid var(--line); border-radius:var(--r3); overflow:hidden; }
+    .aleft { background:var(--dark2); padding:36px; border-right:0.5px solid var(--line); }
+    .aright { background:var(--dark2); padding:36px; }
+    .aitem { display:flex; gap:16px; padding:14px 0; border-bottom:0.5px solid var(--line); }
+    .aitem:first-child { padding-top:0; }
+    .aitem:last-child { border-bottom:none; padding-bottom:0; }
+    .alabel { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); width:86px; flex-shrink:0; padding-top:2px; }
+    .aval { font-size:13px; color:var(--light); line-height:1.5; }
+    .aval a { color:var(--gold2); text-decoration:none; }
+    .aval a:hover { text-decoration:underline; }
+    .skill-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+    .st { font-size:11px; padding:4px 12px; border-radius:20px; }
+    .st-g { background:var(--gold-dim); color:var(--gold2); border:0.5px solid rgba(201,168,76,.2); }
+    .st-b { background:rgba(45,111,189,.1); color:#7fb3f0; border:0.5px solid rgba(45,111,189,.2); }
+    .st-t { background:rgba(26,144,104,.1); color:#6dd4af; border:0.5px solid rgba(26,144,104,.2); }
+
+    /* CTA */
+    .cta-sec { background:var(--dark2); border-top:0.5px solid var(--line); border-bottom:0.5px solid var(--line); padding:80px 2.5rem; text-align:center; }
+    .cta-in { max-width:640px; margin:0 auto; }
+    .cta-tag { display:inline-flex; align-items:center; gap:8px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+    .cta-in h2 { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:700; color:var(--white); line-height:1.05; margin-bottom:14px; }
+    .cta-in h2 em { font-style:italic; color:var(--gold); }
+    .cta-in p { font-size:15px; font-weight:300; color:var(--muted); margin-bottom:34px; line-height:1.7; }
+    .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .cta-contacts { display:flex; align-items:center; justify-content:center; gap:28px; margin-top:36px; padding-top:28px; border-top:0.5px solid var(--line); flex-wrap:wrap; }
+    .cct { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted2); text-decoration:none; transition:color .2s; }
+    .cct:hover { color:var(--gold); }
+    .ccico { width:32px; height:32px; border-radius:var(--r2); background:var(--gold-dim2); border:0.5px solid rgba(201,168,76,.15); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+    /* FOOTER */
+    footer { background:var(--dark); padding:26px 2.5rem; }
+    .fin { max-width:1120px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    .flogo { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; color:var(--white); text-decoration:none; }
+    .flogo span { color:var(--gold); }
+    .flinks { display:flex; gap:18px; flex-wrap:wrap; }
+    .flinks a { font-size:11px; color:var(--muted); text-decoration:none; transition:color .2s; }
+    .flinks a:hover { color:var(--gold); }
+    .fcopy { font-size:11px; color:var(--mid); }
+
+    @media(max-width:900px){
+      .hero { grid-template-columns:1fr; min-height:auto; }
+      .hero-left { border-right:none; border-bottom:0.5px solid var(--line); padding:52px 1.5rem; }
+      .hero-right { height:400px; }
+      .hero h1 { font-size:50px; }
+      .why-grid { grid-template-columns:1fr 1fr; }
+      .about-grid { grid-template-columns:1fr; }
+      .aleft { border-right:none; border-bottom:0.5px solid var(--line); }
+    }
+    @media(max-width:600px){
+      nav { padding:0 1.2rem; }
+      .nav-links { display:none; }
+      .hero h1 { font-size:40px; }
+      .stitle { font-size:34px; }
+      .why-grid { grid-template-columns:1fr; }
+      .cta-in h2 { font-size:36px; }
+      .section { padding:52px 1.2rem; }
+      .hero-left { padding:44px 1.2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="logo">CYBER<span>SOFT</span>.UG</a>
-    <div class="nav-links">
-      <a href="#software">Software</a>
-      <a href="#networking">Networking</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="https://wa.me/256743855403" target="_blank" class="nav-cta">WhatsApp me ↗</a>
+<nav>
+  <a href="#" class="logo">Cyber<span>Soft</span>.ug</a>
+  <div class="nav-links">
+    <a href="#software">Software</a>
+    <a href="#networking">Networking</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="https://wa.me/256743855403" target="_blank" class="nav-cta">WhatsApp ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow a1"><div class="eline"></div><span class="etxt">Kampala, Uganda — Est. 2019</span></div>
+    <h1 class="a2">Software<br>built to <em>last.</em></h1>
+    <p class="hero-name a3">Ssenkubuge Bashiri &mdash; aka Cyber</p>
+    <p class="hero-desc a4">
+      I <strong>sit with you</strong>, listen carefully to what your organisation needs,
+      and build <strong>exactly that</strong> — software that works the way your team thinks.
+      One-time purchase, <strong>you own it forever.</strong> No subscriptions. No monthly fees. Ever.
+    </p>
+    <div class="hero-btns a5">
+      <a href="#software" class="btn-gold">View software catalogue</a>
+      <a href="#networking" class="btn-outline">Cisco networking</a>
     </div>
-    <button class="hamburger" onclick="this.nextElementSibling.style.display='flex'" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-tag">
-          <div class="hero-tag-dot"></div>
-          Kampala, Uganda — Software & Cisco Networking
-        </div>
-        <h1>Software<br>built to <em>last.</em><br>You own it.</h1>
-        <p class="hero-sub">
-          I sit with you, listen to exactly what your organisation needs, and build precisely that — software that works the way your team works. One-time purchase, you own it forever. No subscriptions, ever. I also set up and secure Cisco networks.
-        </p>
-        <div class="hero-btns">
-          <a href="#software" class="btn-primary">View software catalogue</a>
-          <a href="#networking" class="btn-ghost">Cisco networking</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-n">5+</div>
-            <div class="stat-l">Years building</div>
-          </div>
-          <div>
-            <div class="stat-n">30+</div>
-            <div class="stat-l">Systems deployed</div>
-          </div>
-          <div>
-            <div class="stat-n">UGX</div>
-            <div class="stat-l">Local pricing</div>
-          </div>
-          <div>
-            <div class="stat-n">0</div>
-            <div class="stat-l">Monthly fees</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROFILE CARD -->
-      <div class="profile-card">
-        <div class="profile-avatar">SB</div>
-        <div class="profile-name">Ssenkubuge Bashiri</div>
-        <div class="profile-title">aka Cyber · Software Developer & Cisco Network Engineer · Kampala, Uganda</div>
-        <div class="profile-stats">
-          <div class="pstat">
-            <div class="pstat-n">CCNA</div>
-            <div class="pstat-l">Cisco certified</div>
-          </div>
-          <div class="pstat">
-            <div class="pstat-n">CS</div>
-            <div class="pstat-l">Diploma — YMCA</div>
-          </div>
-          <div class="pstat">
-            <div class="pstat-n">24h</div>
-            <div class="pstat-l">WhatsApp support</div>
-          </div>
-          <div class="pstat">
-            <div class="pstat-n">0</div>
-            <div class="pstat-l">Monthly fees</div>
-          </div>
-        </div>
-        <div class="profile-skills">
-          <span class="pill pill-blue">Python</span>
-          <span class="pill pill-blue">ttkbootstrap</span>
-          <span class="pill pill-blue">MySQL</span>
-          <span class="pill pill-teal">Desktop Apps</span>
-          <span class="pill pill-teal">Web Dev</span>
-          <span class="pill pill-amber">Cisco CCNA</span>
-          <span class="pill pill-amber">MikroTik</span>
-          <span class="pill pill-amber">Network Security</span>
-        </div>
-        <div class="profile-contacts">
-          <a href="https://wa.me/256743855403" target="_blank" class="contact-row">
-            <div class="contact-ico">📱</div>
-            +256 743 855 403
-          </a>
-          <a href="mailto:ssenkubugebashiri23@gmail.com" class="contact-row">
-            <div class="contact-ico">✉️</div>
-            ssenkubugebashiri23@gmail.com
-          </a>
-          <a href="https://github.com/cyberbashir" target="_blank" class="contact-row">
-            <div class="contact-ico">💻</div>
-            github.com/cyberbashir
-          </a>
-        </div>
-      </div>
+    <div class="hero-stats a5">
+      <div><div class="hstat-n">5+</div><div class="hstat-l">Years building</div></div>
+      <div><div class="hstat-n">30+</div><div class="hstat-l">Systems deployed</div></div>
+      <div><div class="hstat-n">0</div><div class="hstat-l">Monthly fees</div></div>
+      <div><div class="hstat-n">24h</div><div class="hstat-l">WhatsApp support</div></div>
     </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- SOFTWARE CATALOGUE -->
-  <section id="software">
-    <div class="section">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">Software catalogue</div>
-          <div class="sec-title">Buy once. Own forever.</div>
-        </div>
-        <div class="filter-tabs">
-          <div class="ftab on" onclick="filterSW('all', this)">All</div>
-          <div class="ftab" onclick="filterSW('school', this)">Schools</div>
-          <div class="ftab" onclick="filterSW('health', this)">Health</div>
-          <div class="ftab" onclick="filterSW('business', this)">Business</div>
-          <div class="ftab" onclick="filterSW('ngo', this)">NGOs</div>
-        </div>
-      </div>
-      <div class="sw-grid" id="sw-grid"></div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- NETWORKING -->
-  <section id="networking">
-    <div class="section">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">Cisco networking</div>
-          <div class="sec-title">Networks that just work.</div>
-        </div>
-      </div>
-      <div class="net-grid">
-        <div class="net-card">
-          <div class="net-ico">🔌</div>
-          <div class="net-name">Office network setup</div>
-          <div class="net-desc">Full LAN/WAN setup for your office or organisation. Routers, switches, structured cabling and complete configuration from scratch.</div>
-          <div class="net-from">Starting from</div>
-          <div class="net-price">UGX 800,000</div>
-        </div>
-        <div class="net-card">
-          <div class="net-ico">🛡️</div>
-          <div class="net-name">Network security & firewall</div>
-          <div class="net-desc">Cisco firewall configuration, access control lists (ACLs), VLANs and security hardening to protect your organisation's data.</div>
-          <div class="net-from">Starting from</div>
-          <div class="net-price">UGX 600,000</div>
-        </div>
-        <div class="net-card">
-          <div class="net-ico">📶</div>
-          <div class="net-name">WiFi deployment</div>
-          <div class="net-desc">Enterprise-grade wireless network setup across your premises. Coverage mapping, access points and controller configuration.</div>
-          <div class="net-from">Starting from</div>
-          <div class="net-price">UGX 500,000</div>
-        </div>
-        <div class="net-card">
-          <div class="net-ico">🔧</div>
-          <div class="net-name">Network troubleshooting</div>
-          <div class="net-desc">Slow internet? Dropped connections? I diagnose and fix network issues fast — same-day response in Kampala.</div>
-          <div class="net-from">Starting from</div>
-          <div class="net-price">UGX 150,000</div>
-        </div>
-        <div class="net-card">
-          <div class="net-ico">🖥️</div>
-          <div class="net-name">Server room setup</div>
-          <div class="net-desc">Rack installation, patch panels, UPS, structured cabling and full documentation for your server room or comms cabinet.</div>
-          <div class="net-from">Starting from</div>
-          <div class="net-price">UGX 1,200,000</div>
-        </div>
-        <div class="net-card">
-          <div class="net-ico">📋</div>
-          <div class="net-name">IT support contract</div>
-          <div class="net-desc">Ongoing IT support — network monitoring, maintenance visits and priority response whenever something goes wrong.</div>
-          <div class="net-from">From</div>
-          <div class="net-price">UGX 300,000 / quarter</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">Real work</div>
-          <div class="sec-title">Deployed projects.</div>
-        </div>
-      </div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <img src="https://portfolio-cyber-rust.vercel.app/business.png" alt="Clinic Automation System" class="proj-img" />
-          <div class="proj-body">
-            <span class="proj-tag badge-teal">Health</span>
-            <div class="proj-name">Clinic Management & Automation System</div>
-            <div class="proj-desc">A Python/SQL desktop application for a local clinic handling patient records, appointment scheduling, billing and role-based access control.</div>
-            <div class="proj-result">✓ Automated 70% of manual data entry — reduced errors significantly</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="https://portfolio-cyber-rust.vercel.app/network.png" alt="Network Security" class="proj-img" />
-          <div class="proj-body">
-            <span class="proj-tag badge-blue">Networking</span>
-            <div class="proj-name">Perimeter Security & Intrusion Prevention</div>
-            <div class="proj-desc">Multi-phase VPN system and custom DPI firewall policies on MikroTik devices for a high-value client requiring secure remote access.</div>
-            <div class="proj-result">✓ Blocked 99% of unauthorized traffic — secure remote access achieved</div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <img src="https://portfolio-cyber-rust.vercel.app/web.png" alt="Web Application Testing" class="proj-img" />
-          <div class="proj-body">
-            <span class="proj-tag badge-amber">Security Audit</span>
-            <div class="proj-name">Web Application Vulnerability Audit</div>
-            <div class="proj-desc">Comprehensive penetration test on a client's e-commerce platform, testing against OWASP Top 10 including broken access control and XSS.</div>
-            <div class="proj-result">✓ 7 high-risk vulnerabilities identified and fully patched</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- TESTIMONIALS -->
-  <section>
-    <div class="section">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">Client feedback</div>
-          <div class="sec-title">What clients say.</div>
-        </div>
-      </div>
-      <div class="test-grid">
-        <div class="test-card">
-          <div class="test-quote">"Bashiri's team provided an exceptionally detailed analysis. His immediate actions on our firewall policies stopped a clear phishing attempt that was underway. True threat neutralization."</div>
-          <div class="test-author">C-Suite Executive</div>
-          <div class="test-role">Corporate client, Kampala</div>
-        </div>
-        <div class="test-card">
-          <div class="test-quote">"The automated security scripts he delivered are a game-changer. Our internal auditing is now proactive and error-free. He is an essential asset in digital defense."</div>
-          <div class="test-author">Operations Manager</div>
-          <div class="test-role">Organisation, Uganda</div>
-        </div>
-        <div class="test-card">
-          <div class="test-quote">"He came in, set everything up, trained our staff and everything worked from day one. The system is exactly what our school needed and we own it — no monthly costs."</div>
-          <div class="test-author">School Director</div>
-          <div class="test-role">Primary school, Central Uganda</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- WHY CYBER -->
-  <section id="about">
-    <div class="section">
-      <div class="sec-head">
-        <div>
-          <div class="sec-label">Why choose me</div>
-          <div class="sec-title">What makes me different.</div>
-        </div>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-num">01</div>
-          <div class="why-title">You describe it, I build exactly that</div>
-          <div class="why-desc">I sit with you, listen to exactly what your organisation needs, and build precisely that — nothing more, nothing less. No guessing, no generic templates.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-num">02</div>
-          <div class="why-title">Always user friendly</div>
-          <div class="why-desc">Because I build from your own description, your staff can actually use the software comfortably from day one. It works the way your team thinks, not the way a programmer thinks.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-num">03</div>
-          <div class="why-title">You own it forever</div>
-          <div class="why-desc">Pay once and the software is yours permanently. No monthly fees, no subscriptions, no surprises on your budget.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-num">04</div>
-          <div class="why-title">On-site setup & training</div>
-          <div class="why-desc">I come to you, install the software, train your staff and make sure everything works perfectly before I leave.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-num">05</div>
-          <div class="why-title">Direct WhatsApp support</div>
-          <div class="why-desc">Reach me directly on WhatsApp any time. No ticket systems or call centres — fast, personal support from the person who built your software.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-num">06</div>
-          <div class="why-title">Software + networking</div>
-          <div class="why-desc">I handle both your software and your Cisco network setup. One person, one call — no blaming other contractors.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-wrap">
-    <div class="cta-strip">
-      <div>
-        <h2>Ready to get started?</h2>
-        <p>Tell me what your organisation needs. I'll give you a price and we can start immediately. WhatsApp is the fastest way to reach me.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="https://wa.me/256743855403" target="_blank" class="btn-white">WhatsApp me ↗</a>
-        <a href="mailto:ssenkubugebashiri23@gmail.com" class="btn-outline-w">Send an email</a>
+  </div>
+  <div class="hero-right">
+    <img src="https://portfolio-cyber-rust.vercel.app/cyber.png" alt="Ssenkubuge Bashiri — Cyber" class="hero-photo" />
+    <div class="photo-overlay"></div>
+    <div class="photo-caption">
+      <div class="photo-name">Ssenkubuge Bashiri</div>
+      <div class="photo-role">Software Developer &amp; Cisco Network Engineer</div>
+      <div class="photo-badges">
+        <span class="pbadge">Python / SQL</span>
+        <span class="pbadge">Cisco CCNA</span>
+        <span class="pbadge">MikroTik</span>
+        <span class="pbadge">Desktop Apps</span>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">CYBER<span>SOFT</span>.UG</div>
-      <div class="footer-links">
-        <a href="https://wa.me/256743855403" target="_blank">WhatsApp</a>
-        <a href="mailto:ssenkubugebashiri23@gmail.com">Email</a>
-        <a href="https://github.com/cyberbashir" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/ssenkubuge-bashiri-678448383" target="_blank">LinkedIn</a>
-        <a href="https://portfolio-cyber-rust.vercel.app/Ssenkubuge_Bashiri_CV.pdf" target="_blank">Download CV</a>
+<hr class="div" />
+
+<!-- SOFTWARE -->
+<section id="software">
+  <div class="section">
+    <div class="sec-row">
+      <div>
+        <div class="seyebrow"><div class="sline"></div><span class="stag">Software catalogue</span></div>
+        <div class="stitle">Buy once. Own <em>forever.</em></div>
+        <div class="ssub">Every system is built around your exact requirements — not a template.</div>
       </div>
-      <div class="footer-copy">© 2025 Ssenkubuge Bashiri · Kampala, Uganda</div>
+      <div class="ftabs">
+        <div class="ftab on" onclick="filterSW('all',this)">All</div>
+        <div class="ftab" onclick="filterSW('school',this)">Schools</div>
+        <div class="ftab" onclick="filterSW('health',this)">Health</div>
+        <div class="ftab" onclick="filterSW('business',this)">Business</div>
+        <div class="ftab" onclick="filterSW('ngo',this)">NGOs</div>
+      </div>
     </div>
-  </footer>
+    <div class="sw-grid" id="sw-grid"></div>
+  </div>
+</section>
 
-  <script>
-    const software = [
-      { ico: '🏫', name: 'School Manager Pro', desc: 'Full school management — students, fees, classes, attendance, exams and report cards.', feats: ['Student records', 'Fee management', 'Report cards', 'Attendance'], price: 'UGX 1,200,000', cat: 'school', badge: 'blue', blabel: 'School', bg: '#E6F1FB' },
-      { ico: '🏥', name: 'Clinic & Hospital System', desc: 'Patient records, appointments, prescriptions, billing and lab results all in one system.', feats: ['Patient records', 'Appointments', 'Billing', 'Lab results'], price: 'UGX 1,800,000', cat: 'health', badge: 'teal', blabel: 'Health', bg: '#E1F5EE' },
-      { ico: '🛒', name: 'Inventory & Sales System', desc: 'Track stock, manage suppliers, record sales and generate daily and monthly reports.', feats: ['Stock tracking', 'Sales records', 'Suppliers', 'Reports'], price: 'UGX 700,000', cat: 'business', badge: 'amber', blabel: 'Business', bg: '#FAEEDA' },
-      { ico: '💊', name: 'Pharmacy Manager', desc: 'Drug inventory, expiry tracking, sales, prescriptions and supplier management.', feats: ['Drug inventory', 'Expiry alerts', 'Sales', 'Prescriptions'], price: 'UGX 900,000', cat: 'health', badge: 'teal', blabel: 'Health', bg: '#E1F5EE' },
-      { ico: '💰', name: 'Payroll & HR System', desc: 'Staff records, salaries, NSSF/PAYE deductions, payslips and leave management.', feats: ['Staff records', 'Payslips', 'NSSF/PAYE', 'Leave mgmt'], price: 'UGX 1,000,000', cat: 'business', badge: 'amber', blabel: 'Business', bg: '#FAEEDA' },
-      { ico: '🏨', name: 'Hotel & Lodge System', desc: 'Room bookings, guest records, billing, housekeeping and occupancy reports.', feats: ['Bookings', 'Guest records', 'Billing', 'Reports'], price: 'UGX 1,500,000', cat: 'business', badge: 'amber', blabel: 'Business', bg: '#FAEEDA' },
-      { ico: '🏢', name: 'NGO Project Tracker', desc: 'Manage activities, beneficiaries, budgets and generate donor reports with ease.', feats: ['Activities', 'Beneficiaries', 'Budgets', 'Donor reports'], price: 'UGX 1,300,000', cat: 'ngo', badge: 'coral', blabel: 'NGO', bg: '#FAECE7' },
-      { ico: '📚', name: 'Library Management System', desc: 'Book catalogue, member records, borrowing, returns and overdue tracking.', feats: ['Catalogue', 'Members', 'Borrowing', 'Overdue alerts'], price: 'UGX 600,000', cat: 'school', badge: 'blue', blabel: 'School', bg: '#E6F1FB' },
-    ];
+<hr class="div" />
 
-    function renderSW(cat) {
-      const grid = document.getElementById('sw-grid');
-      const list = cat === 'all' ? software : software.filter(s => s.cat === cat);
-      grid.innerHTML = list.map(s => `
-        <div class="sw-card">
-          <div class="card-top">
-            <div class="card-ico" style="background:${s.bg}">${s.ico}</div>
-            <span class="card-badge badge-${s.badge}">${s.blabel}</span>
-          </div>
-          <div class="card-name">${s.name}</div>
-          <div class="card-desc">${s.desc}</div>
-          <div class="card-feats">${s.feats.map(f => `<span class="feat">${f}</span>`).join('')}</div>
-          <div class="card-foot">
-            <div>
-              <div class="card-price">${s.price}</div>
-              <div class="card-once">one-time · you own it forever</div>
-            </div>
-            <a href="https://wa.me/256743855403?text=Hi%20Cyber%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(s.name)}" target="_blank" class="card-cta">Enquire ↗</a>
-          </div>
+<!-- NETWORKING -->
+<section id="networking">
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">Cisco networking</span></div>
+    <div class="stitle">Networks that <em>just work.</em></div>
+    <div class="ssub">Enterprise-grade setup, security and support for organisations across Kampala.</div>
+    <div class="net-grid">
+      <div class="net-card"><div class="nico">🔌</div><div class="nname">Office network setup</div><div class="ndesc">Full LAN/WAN setup for your office or organisation. Routers, switches, structured cabling and complete Cisco configuration from scratch.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 800,000</div></div>
+      <div class="net-card"><div class="nico">🛡️</div><div class="nname">Network security &amp; firewall</div><div class="ndesc">Cisco firewall configuration, access control lists, VLANs and security hardening to protect your organisation's data from threats.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 600,000</div></div>
+      <div class="net-card"><div class="nico">📶</div><div class="nname">WiFi deployment</div><div class="ndesc">Enterprise-grade wireless network setup across your premises. Coverage mapping, access points and controller configuration.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 500,000</div></div>
+      <div class="net-card"><div class="nico">🔧</div><div class="nname">Network troubleshooting</div><div class="ndesc">Slow internet? Dropped connections? I diagnose and fix network issues fast — same-day response anywhere in Kampala.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 150,000</div></div>
+      <div class="net-card"><div class="nico">🖥️</div><div class="nname">Server room setup</div><div class="ndesc">Rack installation, patch panels, UPS, structured cabling and full documentation for your server room or comms cabinet.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 1,200,000</div></div>
+      <div class="net-card"><div class="nico">📋</div><div class="nname">IT support contract</div><div class="ndesc">Ongoing IT support — network monitoring, maintenance visits and priority response whenever something goes wrong.</div><div class="nfrom">From</div><div class="nprice">UGX 300,000 / quarter</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">Real work</span></div>
+    <div class="stitle">Deployed <em>projects.</em></div>
+    <div class="ssub">Systems built and running for real organisations in Uganda.</div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <img src="https://portfolio-cyber-rust.vercel.app/business.png" alt="Clinic System" class="proj-img" />
+        <div class="proj-body">
+          <span class="ptag bt">Health</span>
+          <div class="pname">Clinic Management &amp; Automation System</div>
+          <div class="pdesc">A Python/SQL desktop application for a local clinic — patient records, appointment scheduling, billing and role-based access control built exactly to the clinic's own workflow.</div>
+          <div class="presult">✓ Automated 70% of manual data entry — errors reduced significantly</div>
         </div>
-      `).join('');
-    }
+      </div>
+      <div class="proj-card">
+        <img src="https://portfolio-cyber-rust.vercel.app/network.png" alt="Network Security" class="proj-img" />
+        <div class="proj-body">
+          <span class="ptag bb">Networking</span>
+          <div class="pname">Perimeter Security &amp; Intrusion Prevention</div>
+          <div class="pdesc">Multi-phase VPN system and custom DPI firewall policies on MikroTik devices, designed for a high-value client requiring secure and reliable remote access.</div>
+          <div class="presult">✓ 99% of unauthorized traffic blocked — secure remote access achieved</div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img src="https://portfolio-cyber-rust.vercel.app/web.png" alt="Web Audit" class="proj-img" />
+        <div class="proj-body">
+          <span class="ptag ba">Security audit</span>
+          <div class="pname">Web Application Vulnerability Audit</div>
+          <div class="pdesc">Full penetration test on a client's e-commerce platform tested against OWASP Top 10 — broken access control, XSS, injection vulnerabilities and more.</div>
+          <div class="presult">✓ 7 high-risk vulnerabilities identified and fully patched</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function filterSW(cat, el) {
-      document.querySelectorAll('.ftab').forEach(t => t.classList.remove('on'));
-      el.classList.add('on');
-      renderSW(cat);
-    }
+<hr class="div" />
 
-    renderSW('all');
-  </script>
+<!-- WHY -->
+<section>
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">Why choose me</span></div>
+    <div class="stitle">What makes me <em>different.</em></div>
+    <div class="ssub">Not a company. Not a template. A developer who listens first.</div>
+    <div class="why-grid">
+      <div class="why-card"><div class="wnum">01</div><div class="wtitle">You describe it, I build exactly that</div><div class="wdesc">I sit with you, listen to exactly what your organisation needs and build precisely that — nothing more, nothing less. No guessing, no generic templates forced onto your workflow.</div></div>
+      <div class="why-card"><div class="wnum">02</div><div class="wtitle">Always user friendly</div><div class="wdesc">Because the software is built from your own description, your staff can use it comfortably from day one. It works the way your team thinks, not the way a programmer thinks.</div></div>
+      <div class="why-card"><div class="wnum">03</div><div class="wtitle">You own it forever</div><div class="wdesc">Pay once and the software is yours permanently. No monthly fees, no subscriptions, no surprises on your budget next year or the year after.</div></div>
+      <div class="why-card"><div class="wnum">04</div><div class="wtitle">On-site setup &amp; training</div><div class="wdesc">I come to your premises, install the software, train your staff and make sure everything works perfectly before I leave.</div></div>
+      <div class="why-card"><div class="wnum">05</div><div class="wtitle">Direct WhatsApp support</div><div class="wdesc">Reach me directly on WhatsApp any time. No ticket systems, no call centres — personal support from the exact person who built your software.</div></div>
+      <div class="why-card"><div class="wnum">06</div><div class="wtitle">Software + networking in one</div><div class="wdesc">I handle both your software systems and your Cisco network. One person, one call — no confusion about who is responsible for what.</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">Client feedback</span></div>
+    <div class="stitle">What clients <em>say.</em></div>
+    <div class="ssub"></div>
+    <div class="test-grid">
+      <div class="test-card"><span class="tqm">"</span><div class="tq">Bashiri's team provided an exceptionally detailed analysis. His immediate actions on our firewall policies stopped a clear phishing attempt that was underway. True threat neutralization.</div><div class="tline"></div><div class="tauth">C-Suite Executive</div><div class="trole">Corporate client, Kampala</div></div>
+      <div class="test-card"><span class="tqm">"</span><div class="tq">The automated security scripts he delivered are a game-changer. Our internal auditing is now proactive and error-free. He is an essential asset in digital defense.</div><div class="tline"></div><div class="tauth">Operations Manager</div><div class="trole">Organisation, Uganda</div></div>
+      <div class="test-card"><span class="tqm">"</span><div class="tq">He came in, sat with us, understood exactly what we needed and built it. The system works perfectly for our school and we own it — no monthly costs eating into our budget.</div><div class="tline"></div><div class="tauth">School Director</div><div class="trole">Primary school, Central Uganda</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">About</span></div>
+    <div class="stitle" style="margin-bottom:32px;">The <em>developer.</em></div>
+    <div class="about-grid">
+      <div class="aleft">
+        <div class="aitem"><div class="alabel">Name</div><div class="aval">Ssenkubuge Bashiri (Cyber)</div></div>
+        <div class="aitem"><div class="alabel">Location</div><div class="aval">Seeta Kasangati, Kampala, Uganda</div></div>
+        <div class="aitem"><div class="alabel">Phone</div><div class="aval"><a href="tel:+256743855403">+256 743 855 403</a></div></div>
+        <div class="aitem"><div class="alabel">WhatsApp</div><div class="aval"><a href="https://wa.me/256743855403" target="_blank">+256 743 855 403</a></div></div>
+        <div class="aitem"><div class="alabel">Email</div><div class="aval"><a href="mailto:ssenkubugebashiri23@gmail.com">ssenkubugebashiri23@gmail.com</a></div></div>
+        <div class="aitem"><div class="alabel">GitHub</div><div class="aval"><a href="https://github.com/cyberbashir" target="_blank">github.com/cyberbashir</a></div></div>
+        <div class="aitem"><div class="alabel">LinkedIn</div><div class="aval"><a href="https://www.linkedin.com/in/ssenkubuge-bashiri-678448383" target="_blank">ssenkubuge-bashiri</a></div></div>
+        <div class="aitem"><div class="alabel">CV</div><div class="aval"><a href="https://portfolio-cyber-rust.vercel.app/Ssenkubuge_Bashiri_CV.pdf" target="_blank">Download PDF ↗</a></div></div>
+      </div>
+      <div class="aright">
+        <div class="stag" style="margin-bottom:12px;">Software skills</div>
+        <div class="skill-row">
+          <span class="st st-b">Python</span><span class="st st-b">ttkbootstrap</span><span class="st st-b">MySQL / SQL</span><span class="st st-b">Desktop Applications</span><span class="st st-b">Web Development</span><span class="st st-b">Automation scripting</span>
+        </div>
+        <div class="stag" style="margin-bottom:12px; margin-top:20px;">Networking skills</div>
+        <div class="skill-row">
+          <span class="st st-g">Cisco CCNA</span><span class="st st-g">MikroTik / RouterOS</span><span class="st st-g">Firewall / ACLs</span><span class="st st-g">VPN setup</span><span class="st st-g">VLANs</span><span class="st st-g">Wireshark</span>
+        </div>
+        <div class="stag" style="margin-bottom:12px; margin-top:20px;">Education &amp; experience</div>
+        <div class="aitem" style="padding-top:0;"><div class="alabel">2024–25</div><div class="aval">Cisco Networking Academy — Enterprise Networking, Security &amp; Automation</div></div>
+        <div class="aitem"><div class="alabel">2023–25</div><div class="aval">YMCA — Diploma in Computer Science</div></div>
+        <div class="aitem"><div class="alabel">2025</div><div class="aval">Future Stars Kindergarten — IT Specialist</div></div>
+        <div class="aitem"><div class="alabel">2024</div><div class="aval">Wyctech Solutions — System Administrator</div></div>
+        <div class="aitem"><div class="alabel">2023</div><div class="aval">Rows Platinum Optics — Software Developer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="cta-in">
+    <div class="cta-tag"><div class="eline"></div>Ready to start?</div>
+    <h2>Let's build what <em>you need.</em></h2>
+    <p>Tell me what your organisation does and what you need the software to do. I'll sit with you, understand it fully and build exactly that.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/256743855403" target="_blank" class="btn-gold">WhatsApp me now ↗</a>
+      <a href="mailto:ssenkubugebashiri23@gmail.com" class="btn-outline">Send an email</a>
+    </div>
+    <div class="cta-contacts">
+      <a href="https://wa.me/256743855403" target="_blank" class="cct"><div class="ccico">📱</div>+256 743 855 403</a>
+      <a href="mailto:ssenkubugebashiri23@gmail.com" class="cct"><div class="ccico">✉️</div>ssenkubugebashiri23@gmail.com</a>
+      <a href="https://github.com/cyberbashir" target="_blank" class="cct"><div class="ccico">💻</div>github.com/cyberbashir</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fin">
+    <a href="#" class="flogo">Cyber<span>Soft</span>.ug</a>
+    <div class="flinks">
+      <a href="https://wa.me/256743855403" target="_blank">WhatsApp</a>
+      <a href="mailto:ssenkubugebashiri23@gmail.com">Email</a>
+      <a href="https://github.com/cyberbashir" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/ssenkubuge-bashiri-678448383" target="_blank">LinkedIn</a>
+      <a href="https://portfolio-cyber-rust.vercel.app/Ssenkubuge_Bashiri_CV.pdf" target="_blank">CV</a>
+    </div>
+    <div class="fcopy">© 2025 Ssenkubuge Bashiri · Kampala, Uganda</div>
+  </div>
+</footer>
+
+<script>
+const sw = [
+  {ico:'🏫',name:'School Manager Pro',desc:'Full school management built exactly to your school\'s workflow — students, fees, classes, attendance, exams and report cards.',feats:['Student records','Fee management','Report cards','Attendance'],price:'UGX 1,200,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
+  {ico:'🏥',name:'Clinic & Hospital System',desc:'Patient records, appointments, prescriptions, billing and lab results — all in one system designed around how your clinic actually works.',feats:['Patient records','Appointments','Billing','Lab results'],price:'UGX 1,800,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
+  {ico:'🛒',name:'Inventory & Sales System',desc:'Track stock levels, manage suppliers, record every sale and generate daily and monthly reports for your shop or warehouse.',feats:['Stock tracking','Sales records','Suppliers','Reports'],price:'UGX 700,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(201,168,76,0.1)'},
+  {ico:'💊',name:'Pharmacy Manager',desc:'Drug inventory, expiry date tracking, sales, prescription management and supplier records in one secure desktop system.',feats:['Drug inventory','Expiry alerts','Sales','Prescriptions'],price:'UGX 900,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
+  {ico:'💰',name:'Payroll & HR System',desc:'Staff records, monthly salaries, NSSF and PAYE deductions, payslip generation and leave management — all automated.',feats:['Staff records','Payslips','NSSF/PAYE','Leave mgmt'],price:'UGX 1,000,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(201,168,76,0.1)'},
+  {ico:'🏨',name:'Hotel & Lodge System',desc:'Room bookings, guest check-in/out, billing, housekeeping task management and occupancy reports — built for your property.',feats:['Bookings','Guest records','Billing','Reports'],price:'UGX 1,500,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(201,168,76,0.1)'},
+  {ico:'🏢',name:'NGO Project Tracker',desc:'Track project activities, manage beneficiary data, control budgets and generate professional donor and progress reports.',feats:['Activities','Beneficiaries','Budgets','Donor reports'],price:'UGX 1,300,000',cat:'ngo',badge:'bc',bl:'NGO',bg:'rgba(153,60,29,0.12)'},
+  {ico:'📚',name:'Library Management System',desc:'Book catalogue, member records, borrowing and return tracking, overdue alerts and reports — all in one system.',feats:['Catalogue','Members','Borrowing','Overdue alerts'],price:'UGX 600,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
+];
+
+function renderSW(cat) {
+  const g = document.getElementById('sw-grid');
+  const list = cat==='all' ? sw : sw.filter(s=>s.cat===cat);
+  g.innerHTML = list.map(s=>`
+    <div class="sw-card">
+      <div class="ctop">
+        <div class="cico" style="background:${s.bg}">${s.ico}</div>
+        <span class="cbadge ${s.badge}">${s.bl}</span>
+      </div>
+      <div class="cname">${s.name}</div>
+      <div class="cdesc">${s.desc}</div>
+      <div class="cfeats">${s.feats.map(f=>`<span class="feat">${f}</span>`).join('')}</div>
+      <div class="cfoot">
+        <div><div class="cprice">${s.price}</div><div class="conce">one-time · own it forever</div></div>
+        <a href="https://wa.me/256743855403?text=Hi%20Cyber%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(s.name)}" target="_blank" class="ccta">Enquire ↗</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterSW(cat,el){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  renderSW(cat);
+}
+
+renderSW('all');
+</script>
 </body>
 </html>
