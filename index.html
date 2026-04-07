@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
 <title>CyberSoft.ug — Ssenkubuge Bashiri</title>
-<meta name="description" content="Custom desktop software and Cisco networking for Uganda. Buy once, own forever."/>
+<meta name="description" content="Custom desktop software, cybersecurity and Cisco networking for Uganda. Buy once, own forever."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -19,6 +19,8 @@
   --violet:#7c5cbf;--violet-dim:rgba(124,92,191,0.15);
   --green:#00e676;--green-dim:rgba(0,230,118,0.1);
   --red:#ff5252;--red-dim:rgba(255,82,82,0.1);
+  --orange:#ff9800;--orange-dim:rgba(255,152,0,0.1);
+  --pink:#ff4da6;--pink-dim:rgba(255,77,166,0.1);
   --text:#e8eaf0;--muted:#7a7f9a;--muted2:#4e5268;
   --r:6px;--r2:10px;--r3:16px;
 }
@@ -103,6 +105,8 @@ hr.div{border:none;border-top:0.5px solid var(--border);position:relative;z-inde
 .bc{background:rgba(153,60,29,.15);color:#f0a080;border:1px solid rgba(153,60,29,.3)}
 .bv{background:rgba(124,92,191,.15);color:#b09de8;border:1px solid rgba(124,92,191,.3)}
 .br{background:rgba(255,82,82,.12);color:#ff9090;border:1px solid rgba(255,82,82,.3)}
+.bo{background:rgba(255,152,0,.12);color:#ffcc80;border:1px solid rgba(255,152,0,.3)}
+.bp{background:rgba(255,77,166,.12);color:#ff9de0;border:1px solid rgba(255,77,166,.3)}
 .cname{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.2}
 .cdesc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:14px;flex:1}
 .cfeats{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
@@ -112,6 +116,29 @@ hr.div{border:none;border-top:0.5px solid var(--border);position:relative;z-inde
 .conce{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted2);margin-top:2px}
 .ccta{background:var(--gold-dim);color:var(--gold2);border:1px solid rgba(240,180,41,.25);padding:7px 14px;border-radius:var(--r2);font-family:'Space Mono',monospace;font-size:9px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s;white-space:nowrap}
 .ccta:hover{background:var(--gold);color:#070810}
+
+/* CYBERSECURITY SECTION */
+.cyber-section{background:linear-gradient(135deg,rgba(255,82,82,0.04),rgba(124,92,191,0.06));border:1px solid rgba(255,82,82,0.15);border-radius:var(--r3);overflow:hidden;margin-bottom:0}
+.cyber-header{padding:32px 32px 0;border-bottom:1px solid rgba(255,82,82,0.12)}
+.cyber-header-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-bottom:24px}
+.cyber-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);background:var(--red-dim);border:1px solid rgba(255,82,82,0.3);padding:6px 14px;border-radius:20px;margin-bottom:12px}
+.cyber-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.cyber-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:rgba(255,82,82,0.08)}
+.cyber-card{background:var(--bg2);padding:24px;transition:all .2s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cyber-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--red),var(--violet),transparent);opacity:0;transition:opacity .2s}
+.cyber-card:hover::before{opacity:1}
+.cyber-card:hover{background:#0f1020}
+.cyber-ico{width:44px;height:44px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--red-dim);border:1px solid rgba(255,82,82,0.2);margin-bottom:14px}
+.cyber-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.cyber-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:14px;flex:1}
+.cyber-feats{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.cyber-feat{font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,82,82,0.7);background:rgba(255,82,82,0.06);border:1px solid rgba(255,82,82,0.15);padding:2px 7px;border-radius:var(--r)}
+.cyber-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(255,255,255,0.05)}
+.cyber-price{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--red);line-height:1}
+.cyber-once{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted2);margin-top:2px}
+.cyber-cta{background:var(--red-dim);color:#ff9090;border:1px solid rgba(255,82,82,.25);padding:7px 14px;border-radius:var(--r2);font-family:'Space Mono',monospace;font-size:9px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s;white-space:nowrap}
+.cyber-cta:hover{background:var(--red);color:#fff}
 
 /* NETWORKING */
 .net-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r3);overflow:hidden}
@@ -185,6 +212,7 @@ hr.div{border:none;border-top:0.5px solid var(--border);position:relative;z-inde
 .st-g{background:var(--gold-dim);color:var(--gold2);border:1px solid rgba(240,180,41,.2)}
 .st-b{background:rgba(0,229,255,0.07);color:var(--cyan);border:1px solid rgba(0,229,255,.2)}
 .st-t{background:rgba(0,230,118,0.08);color:#6dd4af;border:1px solid rgba(0,230,118,.2)}
+.st-r{background:var(--red-dim);color:#ff9090;border:1px solid rgba(255,82,82,.2)}
 
 /* CTA */
 .cta-sec{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 2rem;text-align:center;position:relative;z-index:1;overflow:hidden}
@@ -218,6 +246,16 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 .game-panel{display:none;animation:fadeUp .4s ease both}
 .game-panel.active{display:block}
 
+/* LEADERBOARD / SCORE PANEL */
+.leaderboard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:16px;margin-top:12px}
+.lb-title{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.lb-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)}
+.lb-row:last-child{border-bottom:none}
+.lb-rank{color:var(--gold);font-weight:700;width:20px}
+.lb-name{flex:1;color:var(--text)}
+.lb-score{color:var(--cyan);font-weight:700}
+.lb-empty{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted2);text-align:center;padding:12px 0}
+
 /* GAME SHARED */
 .game-btn{background:var(--gold-dim);color:var(--gold2);border:1px solid rgba(240,180,41,.3);padding:9px 16px;border-radius:var(--r2);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;cursor:pointer;width:100%;transition:all .15s;margin-top:8px}
 .game-btn:hover{background:var(--gold);color:#070810}
@@ -225,21 +263,19 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 .game-info-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:16px;margin-bottom:10px}
 .gib-title{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}
 
-/* ============ CHESS — MOBILE-FIRST ============ */
+/* NAME INPUT MODAL */
+.name-modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(8px)}
+.name-modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r3);padding:28px;width:90%;max-width:340px;text-align:center}
+.name-modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:6px}
+.name-modal-sub{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:18px}
+.name-modal-input{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);padding:10px 14px;font-family:'Space Mono',monospace;font-size:13px;color:#fff;width:100%;outline:none;margin-bottom:14px;text-align:center;transition:border-color .2s}
+.name-modal-input:focus{border-color:var(--gold)}
+.name-modal-btn{background:linear-gradient(135deg,var(--gold),#d4900a);color:#070810;border:none;padding:11px 24px;border-radius:var(--r2);font-family:'Space Mono',monospace;font-size:11px;font-weight:700;cursor:pointer;width:100%}
+
+/* ============ CHESS ============ */
 .chess-layout{display:flex;flex-direction:column;align-items:center;gap:16px}
 .chess-board-wrap{width:100%;max-width:min(480px, calc(100vw - 32px));margin:0 auto}
-#chess-board{
-  display:grid;
-  grid-template-columns:repeat(8,1fr);
-  grid-template-rows:repeat(8,1fr);
-  width:100%;
-  aspect-ratio:1;
-  border:2px solid rgba(240,180,41,.3);
-  border-radius:var(--r);
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(124,92,191,0.3);
-  touch-action:none;
-}
+#chess-board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);width:100%;aspect-ratio:1;border:2px solid rgba(240,180,41,.3);border-radius:var(--r);overflow:hidden;box-shadow:0 0 40px rgba(124,92,191,0.3);touch-action:none}
 .sq{display:flex;align-items:center;justify-content:center;font-size:clamp(16px,4vw,32px);cursor:pointer;transition:background .1s;user-select:none;position:relative;aspect-ratio:1;line-height:1;touch-action:manipulation}
 .sq.light{background:#2a2d40}.sq.dark{background:#1a1c2e}
 .sq.selected{background:rgba(240,180,41,0.4)!important}
@@ -254,28 +290,13 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 .move-list{max-height:100px;overflow-y:auto;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);line-height:1.8}
 .chess-color-btn{background:var(--violet-dim);color:#b09de8;border:1px solid rgba(124,92,191,.3);padding:8px 14px;border-radius:var(--r2);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;cursor:pointer;width:100%;transition:all .15s;margin-top:6px}
 .chess-color-btn:hover{background:var(--violet);color:#fff}
-@media(min-width:700px){
-  .chess-layout{flex-direction:row;align-items:flex-start;justify-content:center}
-  .chess-board-wrap{width:min(420px,55%);flex-shrink:0}
-  .chess-controls{width:220px;display:flex;flex-direction:column;flex-shrink:0}
-  .chess-controls .game-info-box{margin-bottom:10px}
-  .chess-controls-full{grid-column:unset}
-}
+.chess-score-display{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);line-height:1}
+@media(min-width:700px){.chess-layout{flex-direction:row;align-items:flex-start;justify-content:center}.chess-board-wrap{width:min(420px,55%);flex-shrink:0}.chess-controls{width:220px;display:flex;flex-direction:column;flex-shrink:0}.chess-controls .game-info-box{margin-bottom:10px}.chess-controls-full{grid-column:unset}}
 
-/* ============ SUDOKU — MOBILE-FIRST ============ */
+/* ============ SUDOKU ============ */
 .sudoku-layout{display:flex;flex-direction:column;align-items:center;gap:16px}
 .sudoku-board-wrap{width:100%;max-width:min(400px,calc(100vw - 32px));margin:0 auto}
-#sudoku-board{
-  display:grid;
-  grid-template-columns:repeat(9,1fr);
-  grid-template-rows:repeat(9,1fr);
-  width:100%;
-  aspect-ratio:1;
-  border:2px solid rgba(240,180,41,.4);
-  border-radius:var(--r);
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(124,92,191,0.25);
-}
+#sudoku-board{display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);width:100%;aspect-ratio:1;border:2px solid rgba(240,180,41,.4);border-radius:var(--r);overflow:hidden;box-shadow:0 0 40px rgba(124,92,191,0.25)}
 .sdk-cell{display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(10px,3vw,20px);font-weight:700;cursor:pointer;user-select:none;position:relative;border:0.5px solid rgba(255,255,255,0.06);touch-action:manipulation}
 .sdk-cell.light-box{background:#1e2035}.sdk-cell.dark-box{background:#181a2b}
 .sdk-cell.given{color:#fff}.sdk-cell.user-val{color:var(--cyan)}.sdk-cell.wrong{color:var(--red);background:var(--red-dim)!important}
@@ -289,15 +310,9 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 .sdk-num:hover{border-color:var(--gold);color:var(--gold)}
 .sdk-del{background:var(--red-dim);border:1px solid rgba(255,82,82,.25);border-radius:var(--r);height:34px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--red);cursor:pointer;transition:all .15s;font-weight:700;margin-top:4px}
 .sdk-score{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--gold)}
-@media(min-width:700px){
-  .sudoku-layout{flex-direction:row;align-items:flex-start;justify-content:center}
-  .sudoku-board-wrap{width:min(380px,55%);flex-shrink:0}
-  .sudoku-controls{width:200px;flex-shrink:0}
-  .sdk-numpad{grid-template-columns:repeat(3,1fr)}
-  .sdk-num{height:44px;font-size:20px}
-}
+@media(min-width:700px){.sudoku-layout{flex-direction:row;align-items:flex-start;justify-content:center}.sudoku-board-wrap{width:min(380px,55%);flex-shrink:0}.sudoku-controls{width:200px;flex-shrink:0}.sdk-numpad{grid-template-columns:repeat(3,1fr)}.sdk-num{height:44px;font-size:20px}}
 
-/* ============ MINESWEEPER — MOBILE-FIRST ============ */
+/* ============ MINESWEEPER ============ */
 .mine-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
 .mine-top{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:10px 20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--gold);flex-wrap:wrap;justify-content:center}
 .mine-stat{display:flex;align-items:center;gap:6px}
@@ -341,49 +356,50 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 .scramble-stat-n{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--gold)}
 .scramble-stat-l{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-top:2px}
 .scramble-cat{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-.scramble-cat-btn{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);cursor:pointer;transition:all .15s}
+.scramble-cat-btn{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);cursor:pointer;transition:all .15px}
 .scramble-cat-btn.on{background:var(--violet);color:#fff;border-color:var(--violet)}
 
+/* ============ SNAKE GAME ============ */
+.snake-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.snake-header{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center}
+.snake-stat-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:10px 18px;text-align:center}
+.snake-stat-n{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);line-height:1}
+.snake-stat-l{font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-top:2px}
+#snake-canvas{border:2px solid rgba(0,230,118,0.3);border-radius:var(--r);box-shadow:0 0 40px rgba(0,230,118,0.15);background:#0d1117;max-width:100%;display:block}
+.snake-dpad{display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(3,52px);gap:4px;margin-top:8px}
+.snake-dpad-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:all .15s;user-select:none;touch-action:manipulation}
+.snake-dpad-btn:active{background:var(--green-dim);border-color:var(--green)}
+.snake-dpad-empty{visibility:hidden}
+.snake-speed{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;justify-content:center}
+.speed-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);cursor:pointer;transition:all .15s;font-weight:700}
+.speed-btn.on{background:var(--green-dim);color:var(--green);border-color:var(--green)}
+
 /* RESPONSIVE */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{border-right:none;border-bottom:1px solid var(--border);padding:48px 1.5rem}
-  .hero-right{height:340px}
-  .hero h1{font-size:50px}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .about-grid{grid-template-columns:1fr}
-  .aleft{border-right:none;border-bottom:1px solid var(--border)}
-}
-@media(max-width:700px){
-  nav{padding:0 1rem}
-  .nav-links{display:none}
-  .hero h1{font-size:38px}
-  .stitle{font-size:32px}
-  .why-grid{grid-template-columns:1fr}
-  .cta-in h2{font-size:34px}
-  .section{padding:48px 1rem}
-  .hero-left{padding:40px 1rem}
-  .arcade-header{padding:44px 1rem 0}
-  .game-panels{padding:20px 1rem 44px}
-  .proj-form{grid-template-columns:1fr}
-  .proj-form-full{grid-column:1}
-  .arcade-tabs{gap:5px;padding:18px 1rem 0}
-  .atab{padding:7px 12px;font-size:9px}
-}
-@media(max-width:400px){
-  .hero h1{font-size:32px}
-  .nav-btns .nav-arcade{display:none}
-}
+@media(max-width:960px){.hero{grid-template-columns:1fr;min-height:auto}.hero-left{border-right:none;border-bottom:1px solid var(--border);padding:48px 1.5rem}.hero-right{height:340px}.hero h1{font-size:50px}.why-grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.aleft{border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:700px){nav{padding:0 1rem}.nav-links{display:none}.hero h1{font-size:38px}.stitle{font-size:32px}.why-grid{grid-template-columns:1fr}.cta-in h2{font-size:34px}.section{padding:48px 1rem}.hero-left{padding:40px 1rem}.arcade-header{padding:44px 1rem 0}.game-panels{padding:20px 1rem 44px}.proj-form{grid-template-columns:1fr}.proj-form-full{grid-column:1}.arcade-tabs{gap:5px;padding:18px 1rem 0}.atab{padding:7px 12px;font-size:9px}}
+@media(max-width:400px){.hero h1{font-size:32px}.nav-btns .nav-arcade{display:none}}
 </style>
 </head>
 <body>
 
 <div class="particles" id="particles"></div>
 
+<!-- NAME MODAL -->
+<div class="name-modal" id="name-modal" style="display:none">
+  <div class="name-modal-box">
+    <div style="font-size:32px;margin-bottom:8px">🏆</div>
+    <div class="name-modal-title">New High Score!</div>
+    <div class="name-modal-sub" id="name-modal-sub">Enter your name for the leaderboard</div>
+    <input class="name-modal-input" id="name-modal-input" placeholder="Your name" maxlength="16" autocomplete="off"/>
+    <button class="name-modal-btn" id="name-modal-btn">Save Score</button>
+  </div>
+</div>
+
 <nav>
   <a href="#" class="logo">Cyber<span>Soft</span><sup>.ug</sup></a>
   <div class="nav-links">
     <a href="#software">Software</a>
+    <a href="#cybersecurity">Security</a>
     <a href="#networking">Networking</a>
     <a href="#projects">Projects</a>
     <a href="#arcade">🎮 Arcade</a>
@@ -404,7 +420,7 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
     <p class="hero-desc">I <strong>sit with you</strong>, listen carefully to what your organisation needs, and build <strong>exactly that</strong> — software that works the way your team thinks. One-time purchase, <strong>you own it forever.</strong> No subscriptions. No monthly fees. Ever.</p>
     <div class="hero-btns">
       <a href="#software" class="btn-gold">View catalogue</a>
-      <a href="#networking" class="btn-outline">Cisco networking</a>
+      <a href="#cybersecurity" class="btn-outline">🛡 Cybersecurity</a>
       <a href="#arcade" class="btn-games">🎮 Play games</a>
     </div>
     <div class="hero-stats">
@@ -419,12 +435,13 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
     <div class="photo-overlay"></div>
     <div class="photo-caption">
       <div class="photo-name">Ssenkubuge Bashiri</div>
-      <div class="photo-role">Software Developer &amp; Cisco Network Engineer</div>
+      <div class="photo-role">Software Developer · Cybersecurity Specialist · Cisco Network Engineer</div>
       <div class="photo-badges">
         <span class="pbadge">Python / SQL</span>
         <span class="pbadge">Cisco CCNA</span>
+        <span class="pbadge">Cybersecurity</span>
         <span class="pbadge">MikroTik</span>
-        <span class="pbadge">Desktop Apps</span>
+        <span class="pbadge">Pen Testing</span>
       </div>
     </div>
   </div>
@@ -458,6 +475,30 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 
 <hr class="div"/>
 
+<!-- CYBERSECURITY -->
+<section id="cybersecurity">
+  <div class="section">
+    <div class="seyebrow"><div class="sline"></div><span class="stag">Cybersecurity services</span></div>
+    <div class="stitle">Protect what <em>matters.</em></div>
+    <div class="ssub">Professional threat detection, analysis and response for organisations across Uganda.</div>
+    <div class="cyber-section">
+      <div class="cyber-header">
+        <div class="cyber-header-inner">
+          <div>
+            <div class="cyber-badge">🔴 Active protection available</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff">Advanced cybersecurity & digital forensics</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px">From penetration testing to malware reverse engineering — full-spectrum digital security for Uganda.</div>
+          </div>
+          <a href="https://wa.me/256743855403?text=Hi%20Cyber%2C%20I%20need%20a%20cybersecurity%20consultation" target="_blank" class="cyber-cta" style="padding:12px 20px;font-size:10px;align-self:flex-start">🛡 Get a free assessment ↗</a>
+        </div>
+      </div>
+      <div class="cyber-grid" id="cyber-grid"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div"/>
+
 <!-- NETWORKING -->
 <section id="networking">
   <div class="section">
@@ -466,7 +507,7 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
     <div class="ssub">Enterprise-grade setup, security and support for organisations across Kampala.</div>
     <div class="net-grid">
       <div class="net-card"><div class="nico">🔌</div><div class="nname">Office network setup</div><div class="ndesc">Full LAN/WAN setup. Routers, switches, structured cabling and complete Cisco config from scratch.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 800,000</div></div>
-      <div class="net-card"><div class="nico">🛡️</div><div class="nname">Network security &amp; firewall</div><div class="ndesc">Cisco firewall config, access control lists, VLANs and security hardening to protect your data.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 600,000</div></div>
+      <div class="net-card"><div class="nico">🛡️</div><div class="nname">Network security & firewall</div><div class="ndesc">Cisco firewall config, access control lists, VLANs and security hardening to protect your data.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 600,000</div></div>
       <div class="net-card"><div class="nico">📶</div><div class="nname">WiFi deployment</div><div class="ndesc">Enterprise wireless setup across your premises — coverage mapping, APs and controller config.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 500,000</div></div>
       <div class="net-card"><div class="nico">🔧</div><div class="nname">Network troubleshooting</div><div class="ndesc">Slow internet? Dropped connections? I diagnose and fix fast — same-day response in Kampala.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 150,000</div></div>
       <div class="net-card"><div class="nico">🖥️</div><div class="nname">Server room setup</div><div class="ndesc">Rack install, patch panels, UPS, structured cabling and full documentation.</div><div class="nfrom">Starting from</div><div class="nprice">UGX 1,200,000</div></div>
@@ -528,9 +569,9 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
       <div class="why-card"><div class="wnum">01</div><div class="wtitle">You describe it, I build exactly that</div><div class="wdesc">I sit with you, listen to what your organisation needs and build precisely that — no generic templates.</div></div>
       <div class="why-card"><div class="wnum">02</div><div class="wtitle">Always user friendly</div><div class="wdesc">Because it's built from your own description, your staff use it comfortably from day one.</div></div>
       <div class="why-card"><div class="wnum">03</div><div class="wtitle">You own it forever</div><div class="wdesc">Pay once and it's yours permanently. No monthly fees, no subscriptions, no budget surprises.</div></div>
-      <div class="why-card"><div class="wnum">04</div><div class="wtitle">On-site setup &amp; training</div><div class="wdesc">I come to your premises, install, train your staff and make sure everything works perfectly.</div></div>
+      <div class="why-card"><div class="wnum">04</div><div class="wtitle">On-site setup & training</div><div class="wdesc">I come to your premises, install, train your staff and make sure everything works perfectly.</div></div>
       <div class="why-card"><div class="wnum">05</div><div class="wtitle">Direct WhatsApp support</div><div class="wdesc">Reach me directly on WhatsApp — personal support from the exact person who built your software.</div></div>
-      <div class="why-card"><div class="wnum">06</div><div class="wtitle">Software + networking in one</div><div class="wdesc">I handle both software and Cisco networking. One person, one call — no confusion.</div></div>
+      <div class="why-card"><div class="wnum">06</div><div class="wtitle">Software + security + networking</div><div class="wdesc">I handle software, cybersecurity and Cisco networking. One person, one call — complete digital protection.</div></div>
     </div>
   </div>
 </section>
@@ -572,10 +613,12 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
       <div class="aright">
         <div class="stag" style="margin-bottom:10px">Software skills</div>
         <div class="skill-row"><span class="st st-b">Python</span><span class="st st-b">ttkbootstrap</span><span class="st st-b">MySQL / SQL</span><span class="st st-b">Desktop Apps</span><span class="st st-b">Web Dev</span><span class="st st-b">Automation</span></div>
+        <div class="stag" style="margin-bottom:10px;margin-top:18px">Cybersecurity skills</div>
+        <div class="skill-row"><span class="st st-r">Penetration Testing</span><span class="st st-r">Malware Analysis</span><span class="st st-r">Forensics</span><span class="st st-r">OSINT</span><span class="st st-r">Wireshark</span><span class="st st-r">Kali Linux</span></div>
         <div class="stag" style="margin-bottom:10px;margin-top:18px">Networking skills</div>
-        <div class="skill-row"><span class="st st-g">Cisco CCNA</span><span class="st st-g">MikroTik</span><span class="st st-g">Firewall / ACLs</span><span class="st st-g">VPN</span><span class="st st-g">VLANs</span><span class="st st-g">Wireshark</span></div>
-        <div class="stag" style="margin-bottom:10px;margin-top:18px">Education &amp; experience</div>
-        <div class="aitem" style="padding-top:0"><div class="alabel">2024–25</div><div class="aval">Cisco Networking Academy — Enterprise Security &amp; Automation</div></div>
+        <div class="skill-row"><span class="st st-g">Cisco CCNA</span><span class="st st-g">MikroTik</span><span class="st st-g">Firewall / ACLs</span><span class="st st-g">VPN</span><span class="st st-g">VLANs</span></div>
+        <div class="stag" style="margin-bottom:10px;margin-top:18px">Education & experience</div>
+        <div class="aitem" style="padding-top:0"><div class="alabel">2024–25</div><div class="aval">Cisco Networking Academy — Enterprise Security & Automation</div></div>
         <div class="aitem"><div class="alabel">2023–25</div><div class="aval">YMCA — Diploma in Computer Science</div></div>
         <div class="aitem"><div class="alabel">2025</div><div class="aval">Future Stars Kindergarten — IT Specialist</div></div>
         <div class="aitem"><div class="alabel">2024</div><div class="aval">Wyctech Solutions — System Administrator</div></div>
@@ -592,7 +635,7 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
   <div class="arcade-header">
     <div class="seyebrow" style="justify-content:center"><div class="sline"></div><span class="stag">Mind games arcade</span><div class="sline" style="transform:scaleX(-1)"></div></div>
     <div class="stitle" style="text-align:center">While you wait — <em>play.</em></div>
-    <div class="ssub" style="text-align:center">Five games fully playable on mobile and desktop.</div>
+    <div class="ssub" style="text-align:center">Six games with leaderboards. Fully playable on mobile and desktop.</div>
   </div>
   <div class="arcade-tabs">
     <button class="atab active" onclick="showGame('chess',this)">♟️ Chess</button>
@@ -600,6 +643,7 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
     <button class="atab" onclick="showGame('minesweeper',this)">💣 Minesweeper</button>
     <button class="atab" onclick="showGame('typing',this)">⌨️ Typing</button>
     <button class="atab" onclick="showGame('scramble',this)">🔤 Scramble</button>
+    <button class="atab" onclick="showGame('snake',this)">🐍 Snake</button>
   </div>
   <div class="game-panels">
 
@@ -616,6 +660,11 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
             <div class="game-msg" id="chess-msg">Select a piece to move</div>
           </div>
           <div class="game-info-box">
+            <div class="gib-title">Score</div>
+            <div class="chess-score-display" id="chess-score">0</div>
+            <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-top:4px">captures + checkmates</div>
+          </div>
+          <div class="game-info-box">
             <div class="gib-title">Playing as</div>
             <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--gold);margin-bottom:6px" id="player-color-label">⬜ White</div>
             <button class="chess-color-btn" onclick="switchSide()">⇄ Switch to Black</button>
@@ -625,6 +674,12 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
             <div class="move-list" id="move-list">—</div>
           </div>
           <button class="game-btn chess-controls-full" onclick="initChess()">↺ New game</button>
+          <div class="chess-controls-full">
+            <div class="leaderboard">
+              <div class="lb-title">🏆 Chess Leaderboard</div>
+              <div id="chess-lb"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -654,6 +709,10 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
           </div>
           <button class="game-btn" onclick="initSudoku()">↺ New puzzle</button>
           <div class="game-msg" id="sudoku-msg" style="margin-top:8px"></div>
+          <div class="leaderboard" style="margin-top:12px">
+            <div class="lb-title">🏆 Sudoku Leaderboard</div>
+            <div id="sudoku-lb"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -673,6 +732,10 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
         </div>
         <div id="mine-board"></div>
         <div class="game-msg" id="mine-msg" style="text-align:center"></div>
+        <div class="leaderboard" style="max-width:420px;width:100%">
+          <div class="lb-title">🏆 Fastest Times</div>
+          <div id="mine-lb"></div>
+        </div>
       </div>
     </div>
 
@@ -695,6 +758,10 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
         <div class="typing-cta" id="typing-cta" onclick="startTyping()">Tap here to start typing ⌨️</div>
         <input class="typing-input-hidden" id="typing-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
         <button class="game-btn" style="margin-top:10px" onclick="resetTyping()">↺ New text</button>
+        <div class="leaderboard" style="margin-top:12px">
+          <div class="lb-title">🏆 Typing Leaderboard</div>
+          <div id="typing-lb"></div>
+        </div>
       </div>
     </div>
 
@@ -720,6 +787,44 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
           <button class="game-btn" style="width:auto;padding:10px 22px" onclick="startScramble()">▶ Start game</button>
           <button class="game-btn" style="width:auto;padding:10px 22px;background:var(--cyan-dim);color:var(--cyan);border-color:rgba(0,229,255,.3)" onclick="skipScramble()">Skip →</button>
         </div>
+        <div class="leaderboard" style="margin-top:16px;text-align:left">
+          <div class="lb-title">🏆 Scramble Leaderboard</div>
+          <div id="scramble-lb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNAKE -->
+    <div class="game-panel" id="panel-snake">
+      <div class="snake-wrap">
+        <div class="snake-header">
+          <div class="snake-stat-box"><div class="snake-stat-n" id="sn-score">0</div><div class="snake-stat-l">Score</div></div>
+          <div class="snake-stat-box"><div class="snake-stat-n" id="sn-best">0</div><div class="snake-stat-l">Session Best</div></div>
+          <div class="snake-stat-box"><div class="snake-stat-n" id="sn-level">1</div><div class="snake-stat-l">Level</div></div>
+        </div>
+        <div class="snake-speed">
+          <button class="speed-btn on" onclick="setSnakeSpeed(150,this)">NORMAL</button>
+          <button class="speed-btn" onclick="setSnakeSpeed(90,this)">FAST</button>
+          <button class="speed-btn" onclick="setSnakeSpeed(50,this)">INSANE 🔥</button>
+        </div>
+        <canvas id="snake-canvas" width="380" height="380"></canvas>
+        <div class="game-msg" id="snake-msg" style="text-align:center;margin-top:8px">Press Start or swipe to play</div>
+        <div class="snake-dpad">
+          <div class="snake-dpad-empty"></div>
+          <div class="snake-dpad-btn" id="sn-up" ontouchstart="snDir(0,-1)" onclick="snDir(0,-1)">▲</div>
+          <div class="snake-dpad-empty"></div>
+          <div class="snake-dpad-btn" id="sn-left" ontouchstart="snDir(-1,0)" onclick="snDir(-1,0)">◀</div>
+          <div class="snake-dpad-btn" onclick="snTogglePause()" style="font-size:14px;font-family:'Space Mono',monospace;font-size:10px" id="sn-pause-btn">▶</div>
+          <div class="snake-dpad-btn" id="sn-right" ontouchstart="snDir(1,0)" onclick="snDir(1,0)">▶</div>
+          <div class="snake-dpad-empty"></div>
+          <div class="snake-dpad-btn" id="sn-down" ontouchstart="snDir(0,1)" onclick="snDir(0,1)">▼</div>
+          <div class="snake-dpad-empty"></div>
+        </div>
+        <button class="game-btn" style="max-width:220px;margin-top:4px" onclick="initSnake()">↺ New game</button>
+        <div class="leaderboard" style="max-width:380px;width:100%;text-align:left">
+          <div class="lb-title">🏆 Snake Leaderboard</div>
+          <div id="snake-lb"></div>
+        </div>
       </div>
     </div>
 
@@ -731,7 +836,7 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
   <div class="cta-in">
     <div class="cta-tag"><div class="eline"></div>Ready to start?</div>
     <h2>Let's build what <em>you need.</em></h2>
-    <p>Tell me what your organisation does and what you need the software to do. I'll sit with you, understand it fully and build exactly that.</p>
+    <p>Tell me what your organisation does and what you need. Software, cybersecurity, networking — I handle all three.</p>
     <div class="cta-btns">
       <a href="https://wa.me/256743855403" target="_blank" class="btn-gold">WhatsApp me now ↗</a>
       <a href="mailto:ssenkubugebashiri23@gmail.com" class="btn-outline">Send an email</a>
@@ -762,27 +867,61 @@ footer{background:var(--bg);padding:24px 2rem;position:relative;z-index:1}
 /* PARTICLES */
 (function(){
   const c=document.getElementById('particles');
-  const colors=['#f0b429','#00e5ff','#7c5cbf','#fff'];
-  for(let i=0;i<40;i++){
+  const colors=['#f0b429','#00e5ff','#7c5cbf','#fff','#ff5252','#00e676'];
+  for(let i=0;i<50;i++){
     const p=document.createElement('div');p.className='p';
-    p.style.cssText=`left:${Math.random()*100}%;background:${colors[i%4]};animation-duration:${8+Math.random()*15}s;animation-delay:${Math.random()*10}s;opacity:${0.3+Math.random()*0.4}`;
+    p.style.cssText=`left:${Math.random()*100}%;background:${colors[i%colors.length]};animation-duration:${8+Math.random()*15}s;animation-delay:${Math.random()*10}s;opacity:${0.2+Math.random()*0.4}`;
     c.appendChild(p);
   }
 })();
 
+/* ===================== LEADERBOARD SYSTEM ===================== */
+const LB_KEY='cybersoft_lb_v2';
+function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||{};}catch{return{};}}
+function saveLB(d){try{localStorage.setItem(LB_KEY,JSON.stringify(d));}catch{}}
+function addScore(game,name,score,sortAsc=false){
+  const d=getLB();if(!d[game])d[game]=[];
+  d[game].push({name,score,date:new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short'})});
+  d[game].sort((a,b)=>sortAsc?a.score-b.score:b.score-a.score);
+  d[game]=d[game].slice(0,5);
+  saveLB(d);
+}
+function renderLB(game,el,sortAsc=false,unit=''){
+  const d=getLB();const scores=d[game]||[];
+  const medals=['🥇','🥈','🥉','4️⃣','5️⃣'];
+  if(!scores.length){el.innerHTML='<div class="lb-empty">No scores yet — be the first!</div>';return;}
+  el.innerHTML=scores.map((s,i)=>`<div class="lb-row"><span class="lb-rank">${medals[i]}</span><span class="lb-name">${s.name}</span><span style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted2);margin-right:6px">${s.date}</span><span class="lb-score">${s.score}${unit}</span></div>`).join('');
+}
+
+let pendingScore=null;
+function showNameModal(gameName,score,unit,sortAsc,callback){
+  pendingScore={gameName,score,unit,sortAsc,callback};
+  document.getElementById('name-modal-sub').textContent=`Score: ${score}${unit} — enter your name`;
+  document.getElementById('name-modal-input').value='';
+  document.getElementById('name-modal').style.display='flex';
+  setTimeout(()=>document.getElementById('name-modal-input').focus(),100);
+}
+document.getElementById('name-modal-btn').onclick=function(){
+  const name=document.getElementById('name-modal-input').value.trim()||'Anonymous';
+  if(pendingScore){
+    addScore(pendingScore.gameName,name,pendingScore.score,pendingScore.sortAsc);
+    if(pendingScore.callback)pendingScore.callback();
+    pendingScore=null;
+  }
+  document.getElementById('name-modal').style.display='none';
+};
+document.getElementById('name-modal-input').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('name-modal-btn').click();});
+
 /* ===================== SOFTWARE CATALOGUE ===================== */
 const sw=[
-  /* SCHOOLS */
   {ico:'🏫',name:'School Manager Pro',desc:'Students, fees, classes, attendance, exams and report cards built to your workflow.',feats:['Student records','Fee management','Report cards','Attendance'],price:'UGX 1,200,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
   {ico:'📚',name:'Library Management System',desc:'Book catalogue, member records, borrowing/return tracking, overdue alerts and reports.',feats:['Catalogue','Members','Borrowing','Overdue alerts'],price:'UGX 600,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
   {ico:'🎓',name:'University Admission System',desc:'Online applications, screening, merit lists, admission letters and fee payment tracking.',feats:['Applications','Screening','Merit lists','Payments'],price:'UGX 2,000,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
   {ico:'📝',name:'Exam & Results Portal',desc:'Exam scheduling, mark entry, automatic grade calculation and parent result notifications.',feats:['Scheduling','Mark entry','Grades','SMS alerts'],price:'UGX 800,000',cat:'school',badge:'bb',bl:'School',bg:'rgba(45,111,189,0.12)'},
-  /* HEALTH */
   {ico:'🏥',name:'Clinic & Hospital System',desc:'Patient records, appointments, prescriptions, billing and lab results in one system.',feats:['Patient records','Appointments','Billing','Lab results'],price:'UGX 1,800,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
   {ico:'💊',name:'Pharmacy Manager',desc:'Drug inventory, expiry tracking, sales, prescription management and supplier records.',feats:['Drug inventory','Expiry alerts','Sales','Prescriptions'],price:'UGX 900,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
   {ico:'🩺',name:'Patient Records & EHR',desc:'Digital patient files, medical history, doctor notes, referral letters and follow-up scheduling.',feats:['Patient files','History','Referrals','Follow-ups'],price:'UGX 1,400,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
   {ico:'🧪',name:'Laboratory Information System',desc:'Sample tracking, test results, quality control, billing and doctor report generation.',feats:['Sample tracking','Results','QC','Reports'],price:'UGX 1,100,000',cat:'health',badge:'bt',bl:'Health',bg:'rgba(26,144,104,0.12)'},
-  /* BUSINESS */
   {ico:'🛒',name:'Inventory & Sales System',desc:'Track stock levels, manage suppliers, record every sale and generate daily/monthly reports.',feats:['Stock tracking','Sales records','Suppliers','Reports'],price:'UGX 700,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
   {ico:'💰',name:'Payroll & HR System',desc:'Staff records, monthly salaries, NSSF/PAYE deductions, payslips and leave management.',feats:['Staff records','Payslips','NSSF/PAYE','Leave mgmt'],price:'UGX 1,000,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
   {ico:'🏨',name:'Hotel & Lodge System',desc:'Room bookings, guest check-in/out, billing, housekeeping and occupancy reports.',feats:['Bookings','Guest records','Billing','Reports'],price:'UGX 1,500,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
@@ -791,26 +930,37 @@ const sw=[
   {ico:'🏗️',name:'Construction Project Manager',desc:'Site tracking, material requisitions, contractor payments, progress reports and budget control.',feats:['Site tracking','Materials','Payments','Progress'],price:'UGX 1,600,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
   {ico:'🌾',name:'Farm & Agriculture Manager',desc:'Crop tracking, input management, harvest records, sales and profitability per season.',feats:['Crop tracking','Inputs','Harvest','Profitability'],price:'UGX 700,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
   {ico:'🏦',name:'SACCO & Microfinance System',desc:'Member accounts, savings, loans, interest calculation, repayment schedules and financial statements.',feats:['Members','Savings','Loans','Interest'],price:'UGX 2,200,000',cat:'business',badge:'ba',bl:'Business',bg:'rgba(240,180,41,0.1)'},
-  /* TRANSPORT */
-  {ico:'🚗',name:'Car Parking System',desc:'Entry/exit gate control, ticket generation, time-based billing, slot monitoring and daily revenue reports. Integrates with barrier hardware.',feats:['Gate control','Ticket gen','Time billing','Revenue reports'],price:'UGX 1,800,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
+  {ico:'🚗',name:'Car Parking System',desc:'Entry/exit gate control, ticket generation, time-based billing, slot monitoring and daily revenue reports.',feats:['Gate control','Ticket gen','Time billing','Revenue reports'],price:'UGX 1,800,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
   {ico:'🚌',name:'Fleet & Transport Management',desc:'Vehicle tracking, driver records, trip logging, fuel consumption, maintenance schedules and compliance reports.',feats:['Vehicle tracking','Drivers','Fuel logs','Maintenance'],price:'UGX 1,400,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
-  {ico:'🛣️',name:'Road Assistant System',desc:'Real-time road condition reporting, incident logging, route advisory, emergency dispatch integration and GPS mapping for field teams.',feats:['Road conditions','Incident log','Route advisory','GPS map'],price:'UGX 2,500,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
+  {ico:'🛣️',name:'Road Assistant System',desc:'Real-time road condition reporting, incident logging, route advisory and GPS mapping for field teams.',feats:['Road conditions','Incident log','Route advisory','GPS map'],price:'UGX 2,500,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
   {ico:'🚕',name:'Taxi & Ride Booking System',desc:'Driver and passenger registration, booking management, fare calculation, trip history and payment recording.',feats:['Bookings','Drivers','Fare calc','Trip history'],price:'UGX 1,600,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
   {ico:'🚢',name:'Cargo & Logistics Tracker',desc:'Shipment tracking, waybill generation, delivery confirmation, client notifications and route optimization.',feats:['Tracking','Waybills','Delivery','Notifications'],price:'UGX 1,900,000',cat:'transport',badge:'bv',bl:'Transport',bg:'rgba(124,92,191,0.12)'},
-  /* SECURITY */
-  {ico:'👤',name:'Face Recognition System',desc:'AI-powered facial recognition for access control, attendance and identity verification. Works offline on local hardware.',feats:['Face detection','Access control','Attendance','Offline AI'],price:'UGX 2,800,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
-  {ico:'👆',name:'Fingerprint Access System',desc:'Fingerprint reader integration for staff attendance, building access and secure document sign-off. Multi-reader support.',feats:['Fingerprint scan','Attendance','Access control','Multi-reader'],price:'UGX 1,600,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
+  {ico:'👤',name:'Face Recognition System',desc:'AI-powered facial recognition for access control, attendance and identity verification. Works offline.',feats:['Face detection','Access control','Attendance','Offline AI'],price:'UGX 2,800,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
+  {ico:'👆',name:'Fingerprint Access System',desc:'Fingerprint reader integration for staff attendance, building access and secure document sign-off.',feats:['Fingerprint scan','Attendance','Access control','Multi-reader'],price:'UGX 1,600,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
   {ico:'🎥',name:'CCTV & Surveillance Manager',desc:'Camera feed management, motion detection alerts, clip archiving, remote viewing and incident reporting.',feats:['Feed mgmt','Motion alerts','Archiving','Remote view'],price:'UGX 1,200,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
   {ico:'🔐',name:'Visitor Management System',desc:'Visitor sign-in, photo capture, ID verification, host notification, badge printing and visit history log.',feats:['Sign-in','Photo capture','ID verify','Badge print'],price:'UGX 900,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
   {ico:'🔑',name:'Asset Tracking & Control',desc:'QR/barcode-tagged asset registry, check-in/out, location history, maintenance reminders and loss alerts.',feats:['Asset registry','Check-in/out','Location','Maintenance'],price:'UGX 800,000',cat:'security',badge:'br',bl:'Security',bg:'rgba(255,82,82,0.08)'},
-  /* NGO */
   {ico:'🏢',name:'NGO Project Tracker',desc:'Track activities, manage beneficiaries, control budgets and generate donor-ready reports.',feats:['Activities','Beneficiaries','Budgets','Donor reports'],price:'UGX 1,300,000',cat:'ngo',badge:'bc',bl:'NGO',bg:'rgba(153,60,29,0.12)'},
   {ico:'🤝',name:'Volunteer Management System',desc:'Volunteer registration, skill matching, scheduling, attendance tracking and impact reporting.',feats:['Registration','Skill match','Scheduling','Impact'],price:'UGX 900,000',cat:'ngo',badge:'bc',bl:'NGO',bg:'rgba(153,60,29,0.12)'},
   {ico:'📊',name:'M&E Reporting System',desc:'Monitoring & evaluation data collection, indicator tracking, progress dashboards and donor report automation.',feats:['Data collection','Indicators','Dashboards','Reporting'],price:'UGX 1,500,000',cat:'ngo',badge:'bc',bl:'NGO',bg:'rgba(153,60,29,0.12)'},
-  /* SMART */
-  {ico:'🏠',name:'Smart Home Automation',desc:'Remote lighting, appliance and gate control via phone or touchscreen. Integrated with local sensors and alerts.',feats:['Lighting control','Appliances','Gate','Alerts'],price:'UGX 2,000,000',cat:'smart',badge:'bv',bl:'Smart',bg:'rgba(124,92,191,0.12)'},
+  {ico:'🏠',name:'Smart Home Automation',desc:'Remote lighting, appliance and gate control via phone or touchscreen. Integrated with local sensors.',feats:['Lighting control','Appliances','Gate','Alerts'],price:'UGX 2,000,000',cat:'smart',badge:'bv',bl:'Smart',bg:'rgba(124,92,191,0.12)'},
   {ico:'🌡️',name:'IoT Monitoring Dashboard',desc:'Real-time sensor data for temperature, humidity, power and water — with alerts and historical graphs.',feats:['Sensors','Real-time data','Alerts','History'],price:'UGX 1,800,000',cat:'smart',badge:'bv',bl:'Smart',bg:'rgba(124,92,191,0.12)'},
   {ico:'⚡',name:'Utility & Billing Automation',desc:'Automated meter reading, bill generation, payment reminders and disconnect/reconnect control.',feats:['Meter reading','Bills','Reminders','Control'],price:'UGX 2,100,000',cat:'smart',badge:'bv',bl:'Smart',bg:'rgba(124,92,191,0.12)'},
+];
+
+const cyberServices=[
+  {ico:'🔍',name:'Penetration Testing',desc:'Full-scope ethical hacking of your systems, networks and web applications. I identify every exploitable vulnerability before attackers do, then deliver a detailed remediation report.',feats:['Network pen test','Web app testing','Social engineering','Detailed report'],price:'UGX 2,500,000',note:'per engagement'},
+  {ico:'🦠',name:'Malware Analysis & Reverse Engineering',desc:'Deep static and dynamic analysis of suspicious files, executables or scripts. I reverse-engineer malware samples to understand their behaviour and help you eradicate them completely.',feats:['Static analysis','Dynamic sandbox','Code reversing','IOC extraction'],price:'UGX 1,800,000',note:'per sample set'},
+  {ico:'🔬',name:'Network Forensics',desc:'Post-incident investigation of your network traffic, logs and packet captures. I reconstruct exactly what happened, trace attacker movements and produce court-admissible evidence.',feats:['Packet analysis','Log forensics','Attack timeline','Evidence report'],price:'UGX 2,200,000',note:'per investigation'},
+  {ico:'💾',name:'Data Recovery',desc:'Recovery of lost, deleted, corrupted or ransomware-encrypted data from hard drives, SSDs, USB drives and servers. Cleanroom-level recovery for critical Uganda organisations.',feats:['HDD/SSD recovery','Ransomware decrypt','Deleted file restore','RAID recovery'],price:'UGX 500,000',note:'starting from'},
+  {ico:'☁️',name:'Cloud Computing Security',desc:'Security assessment and hardening of cloud infrastructure on AWS, Azure and Google Cloud. I configure IAM, encryption, monitoring and compliance controls built for African data environments.',feats:['IAM hardening','Cloud pen test','Compliance audit','Cost optimisation'],price:'UGX 1,500,000',note:'per audit'},
+  {ico:'🕵️',name:'OSINT & Threat Intelligence',desc:'Open-source intelligence gathering on threat actors, brand impersonation, data leaks and dark web exposure. Know exactly what your adversaries know about you.',feats:['Dark web scan','Brand monitoring','Leak detection','Actor profiling'],price:'UGX 1,200,000',note:'per report'},
+  {ico:'🛡️',name:'Security Awareness Training',desc:'Live training sessions for your staff on phishing, social engineering, password hygiene and incident response. Built for non-technical teams in Uganda.',feats:['Phishing simulation','Staff workshops','Policy creation','Ongoing drills'],price:'UGX 800,000',note:'per session'},
+  {ico:'📋',name:'ISO 27001 / Compliance Audit',desc:'Full gap analysis against ISO 27001, GDPR and Uganda Data Protection Act requirements. I produce a prioritised roadmap to achieve and maintain compliance.',feats:['Gap analysis','Risk register','Policy templates','Roadmap'],price:'UGX 1,600,000',note:'per audit'},
+  {ico:'🚨',name:'Incident Response & Emergency',desc:'24-hour emergency response for active cyber incidents — ransomware, data breaches, account takeovers. Fast containment, eradication and recovery for Kampala organisations.',feats:['24h response','Containment','Evidence preserve','Recovery plan'],price:'UGX 3,000,000',note:'per incident'},
+  {ico:'🔏',name:'Encryption & Data Privacy Setup',desc:'End-to-end encryption implementation for emails, file storage, databases and communications. Full data privacy setup aligned to Uganda Data Protection and Privacy Act 2019.',feats:['Email encryption','File encryption','DB encryption','Privacy policy'],price:'UGX 900,000',note:'per setup'},
+  {ico:'🌐',name:'Web Application Security Audit',desc:'Thorough OWASP Top 10 assessment of your web application — injection, broken auth, XSS, IDOR and misconfiguration testing with developer-friendly remediation guidance.',feats:['OWASP Top 10','Auth testing','API security','Fix guidance'],price:'UGX 1,400,000',note:'per audit'},
+  {ico:'📡',name:'Wireless Security Assessment',desc:'Full audit of your WiFi infrastructure — rogue AP detection, WPA cracking tests, deauth attack simulation and wireless intrusion detection setup.',feats:['Rogue AP scan','WPA testing','WIDS setup','Coverage audit'],price:'UGX 700,000',note:'per assessment'},
 ];
 
 function renderSW(cat){
@@ -820,6 +970,11 @@ function renderSW(cat){
 }
 function filterSW(cat,el){document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));el.classList.add('on');renderSW(cat);}
 renderSW('all');
+
+function renderCyber(){
+  document.getElementById('cyber-grid').innerHTML=cyberServices.map(s=>`<div class="cyber-card"><div class="cyber-ico">${s.ico}</div><div class="cyber-name">${s.name}</div><div class="cyber-desc">${s.desc}</div><div class="cyber-feats">${s.feats.map(f=>`<span class="cyber-feat">${f}</span>`).join('')}</div><div class="cyber-foot"><div><div class="cyber-price">${s.price}</div><div class="cyber-once">${s.note}</div></div><a href="https://wa.me/256743855403?text=Hi%20Cyber%2C%20I%20need%20${encodeURIComponent(s.name)}" target="_blank" class="cyber-cta">Get quote ↗</a></div></div>`).join('');
+}
+renderCyber();
 
 /* GAME SWITCHER */
 function showGame(id,el){
@@ -873,16 +1028,19 @@ function addProject(){
 /* ===================== CHESS ===================== */
 const PIECES={wK:'♔',wQ:'♕',wR:'♖',wB:'♗',wN:'♘',wP:'♙',bK:'♚',bQ:'♛',bR:'♜',bB:'♝',bN:'♞',bP:'♟'};
 const PIECE_VALUE={P:100,N:320,B:330,R:500,Q:900,K:20000};
-let board,turn,selected,moveHistory,castleRights,gameOver,playerColor='w',aiColor='b',aiThinking=false;
+const PIECE_SCORE={P:10,N:30,B:30,R:50,Q:90,K:0};
+let board,turn,selected,moveHistory,castleRights,gameOver,playerColor='w',aiColor='b',aiThinking=false,chessScore=0;
 
 function initChess(){
   board=[['bR','bN','bB','bQ','bK','bB','bN','bR'],['bP','bP','bP','bP','bP','bP','bP','bP'],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null],['wP','wP','wP','wP','wP','wP','wP','wP'],['wR','wN','wB','wQ','wK','wB','wN','wR']];
-  turn='w';selected=null;moveHistory=[];gameOver=false;aiThinking=false;
+  turn='w';selected=null;moveHistory=[];gameOver=false;aiThinking=false;chessScore=0;
   castleRights={wK:true,wQ:true,bK:true,bQ:true};
   aiColor=playerColor==='w'?'b':'w';
+  document.getElementById('chess-score').textContent='0';
   renderChess();setChessMsg('Select a piece to move');
   document.getElementById('move-list').textContent='—';
   updateColorLabel();
+  renderLB('chess',document.getElementById('chess-lb'));
   if(turn===aiColor)setTimeout(doAiMove,500);
 }
 
@@ -937,7 +1095,12 @@ function getColor(p){return p?p[0]:null;}
 
 function execMove(fr,fc,tr,tc){
   const p=board[fr][fc];
+  const captured=board[tr][tc];
   const files='abcdefgh',ranks='87654321';
+  if(captured&&p[0]===playerColor){
+    chessScore+=PIECE_SCORE[captured[1]]||0;
+    document.getElementById('chess-score').textContent=chessScore;
+  }
   board[tr][tc]=p;board[fr][fc]=null;
   if(p==='wP'&&tr===0)board[tr][tc]='wQ';
   if(p==='bP'&&tr===7)board[tr][tc]='bQ';
@@ -947,8 +1110,19 @@ function execMove(fr,fc,tr,tc){
   moveHistory.push(files[fc]+ranks[fr]+'→'+files[tc]+ranks[tr]);
   const ml=document.getElementById('move-list');ml.textContent=moveHistory.slice(-12).join('\n');ml.scrollTop=ml.scrollHeight;
   const allMoves=getAllMoves(turn);
-  if(allMoves.length===0){gameOver=true;setChessMsg(isInCheck(turn)?'Checkmate! '+(turn==='w'?'Black':'White')+' wins! 🎉':'Stalemate — draw!');}
-  else if(isInCheck(turn)){setChessMsg((turn==='w'?'White':'Black')+' is in check!');}
+  if(allMoves.length===0){
+    gameOver=true;
+    const isCheckmate=isInCheck(turn);
+    if(isCheckmate){
+      const playerWon=(turn===aiColor);
+      if(playerWon){chessScore+=500;document.getElementById('chess-score').textContent=chessScore;}
+      setChessMsg(isCheckmate?'Checkmate! '+(turn==='w'?'Black':'White')+' wins! 🎉':'Stalemate — draw!');
+      if(playerWon){
+        showNameModal('chess',chessScore,' pts',false,()=>{renderLB('chess',document.getElementById('chess-lb'));});
+      }
+    }else{setChessMsg('Stalemate — draw!');}
+  }
+  else if(isInCheck(turn)){setChessMsg((turn==='w'?'White':'Black')+' is in check! ⚡');}
   else{setChessMsg(turn===playerColor?'Your move':'AI is thinking...');}
 }
 
@@ -978,7 +1152,6 @@ function getBestMove(color,depth){
   }
   return bestMove;
 }
-
 function minimax(depth,color,alpha,beta,maximizing){
   if(depth===0)return evaluateBoard();
   const moves=getAllMoves(color);
@@ -986,16 +1159,12 @@ function minimax(depth,color,alpha,beta,maximizing){
   if(maximizing){let max=-Infinity;for(const [fr,fc,tr,tc] of moves){const save=board[tr][tc];const sp=board[fr][fc];board[tr][tc]=sp;board[fr][fc]=null;const score=minimax(depth-1,color==='w'?'b':'w',alpha,beta,false);board[fr][fc]=sp;board[tr][tc]=save;max=Math.max(max,score);alpha=Math.max(alpha,score);if(beta<=alpha)break;}return max;}
   else{let min=Infinity;for(const [fr,fc,tr,tc] of moves){const save=board[tr][tc];const sp=board[fr][fc];board[tr][tc]=sp;board[fr][fc]=null;const score=minimax(depth-1,color==='w'?'b':'w',alpha,beta,true);board[fr][fc]=sp;board[tr][tc]=save;min=Math.min(min,score);beta=Math.min(beta,score);if(beta<=alpha)break;}return min;}
 }
-
 function evaluateBoard(){
   let score=0;
   for(let r=0;r<8;r++)for(let c=0;c<8;c++){const p=board[r][c];if(!p)continue;const val=PIECE_VALUE[p[1]]||0;score+=(p[0]==='w'?1:-1)*val;if(p[1]==='P'){score+=(p[0]==='w'?1:-1)*(p[0]==='w'?(6-r)*5:(r-1)*5);}if(p[1]==='N'||p[1]==='B'){score+=(p[0]==='w'?1:-1)*(3.5-Math.abs(r-3.5)+3.5-Math.abs(c-3.5))*3;}}
   return aiColor==='b'?-score:score;
 }
-
-function getLegalMoves(r,c){
-  return getRawMoves(r,c).filter(([tr,tc])=>{const save=board[tr][tc];const sp=board[r][c];board[tr][tc]=sp;board[r][c]=null;const check=isInCheck(sp[0]);board[r][c]=sp;board[tr][tc]=save;return !check;});
-}
+function getLegalMoves(r,c){return getRawMoves(r,c).filter(([tr,tc])=>{const save=board[tr][tc];const sp=board[r][c];board[tr][tc]=sp;board[r][c]=null;const check=isInCheck(sp[0]);board[r][c]=sp;board[tr][tc]=save;return !check;});}
 function getAllMoves(col){const moves=[];for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(board[r][c]&&board[r][c][0]===col)getLegalMoves(r,c).forEach(m=>moves.push([r,c,...m]));return moves;}
 function isInCheck(col){let kr=-1,kc=-1;for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(board[r][c]===(col+'K')){kr=r;kc=c;}const opp=col==='w'?'b':'w';for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(board[r][c]&&board[r][c][0]===opp){if(getRawMoves(r,c).some(([mr,mc])=>mr===kr&&mc===kc))return true;}return false;}
 function getRawMoves(r,c){
@@ -1032,8 +1201,8 @@ function initSudoku(){
   renderSudoku();
   const np=document.getElementById('sdk-numpad');np.innerHTML='';
   for(let n=1;n<=9;n++){const d=document.createElement('div');d.className='sdk-num';d.textContent=n;d.addEventListener('click',()=>sudokuInput(n));d.addEventListener('touchend',e=>{e.preventDefault();sudokuInput(n);},{passive:false});np.appendChild(d);}
+  renderLB('sudoku',document.getElementById('sudoku-lb'));
 }
-
 function renderSudoku(){
   const b=document.getElementById('sudoku-board');b.innerHTML='';
   for(let r=0;r<9;r++)for(let c=0;c<9;c++){
@@ -1054,16 +1223,25 @@ function renderSudoku(){
   }
   if(sdkSelected){const[sr,sc]=sdkSelected;const cells=document.querySelectorAll('.sdk-cell');cells[sr*9+sc].classList.add('selected');}
 }
-
 function sudokuInput(n){
   if(!sdkSelected)return;
-  const[r,c]=sdkSelected;if(sdkPuzzle[r][c]!==0&&sdkPuzzle[r][c]!==undefined&&document.querySelectorAll('.sdk-cell')[r*9+c].classList.contains('given'))return;
+  const[r,c]=sdkSelected;if(sdkPuzzle[r][c]!==0&&document.querySelectorAll('.sdk-cell')[r*9+c].classList.contains('given'))return;
   if(n===0){document.querySelectorAll('.sdk-cell')[r*9+c].textContent='';document.querySelectorAll('.sdk-cell')[r*9+c].classList.remove('wrong','user-val');return;}
   const cells=document.querySelectorAll('.sdk-cell');const cell=cells[r*9+c];cell.textContent=n;
-  if(sdkSolution[r][c]===n){cell.classList.add('user-val');cell.classList.remove('wrong');sdkScore+=10*(sdkDiff==='hard'?3:sdkDiff==='medium'?2:1);document.getElementById('sdk-score').textContent=sdkScore;sdkPuzzle[r][c]=n;let done=true;for(let rr=0;rr<9;rr++)for(let cc=0;cc<9;cc++)if(sdkPuzzle[rr][cc]===0)done=false;if(done)document.getElementById('sudoku-msg').textContent='🎉 Puzzle solved! Great job!';}
-  else{cell.classList.add('wrong');sdkMistakes++;document.getElementById('sdk-mistakes').textContent=sdkMistakes;if(sdkMistakes>=3)document.getElementById('sudoku-msg').textContent='3 mistakes — game over! Try again.';}
+  if(sdkSolution[r][c]===n){
+    cell.classList.add('user-val');cell.classList.remove('wrong');
+    sdkScore+=10*(sdkDiff==='hard'?3:sdkDiff==='medium'?2:1);
+    document.getElementById('sdk-score').textContent=sdkScore;sdkPuzzle[r][c]=n;
+    let done=true;for(let rr=0;rr<9;rr++)for(let cc=0;cc<9;cc++)if(sdkPuzzle[rr][cc]===0)done=false;
+    if(done){
+      document.getElementById('sudoku-msg').textContent='🎉 Puzzle solved! Great job!';
+      showNameModal('sudoku',sdkScore,' pts',false,()=>{renderLB('sudoku',document.getElementById('sudoku-lb'));});
+    }
+  }else{
+    cell.classList.add('wrong');sdkMistakes++;document.getElementById('sdk-mistakes').textContent=sdkMistakes;
+    if(sdkMistakes>=3){document.getElementById('sudoku-msg').textContent='3 mistakes — game over! Try again.';}
+  }
 }
-
 function setSudokuDiff(d,el){sdkDiff=d;document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');initSudoku();}
 initSudoku();
 
@@ -1076,7 +1254,7 @@ function initMine(){
   mBoard=Array.from({length:mR},()=>Array(mC).fill(0));
   mRevealed=Array.from({length:mR},()=>Array(mC).fill(false));
   mFlagged=Array.from({length:mR},()=>Array(mC).fill(false));
-  renderMine();
+  renderMine();renderLB('mine',document.getElementById('mine-lb'),true,'s');
 }
 function placeMines(fr,fc){
   let placed=0;while(placed<mM){const r=Math.floor(Math.random()*mR),c=Math.floor(Math.random()*mC);if(mBoard[r][c]!=='M'&&!(r===fr&&c===fc)){mBoard[r][c]='M';placed++;}}
@@ -1096,31 +1274,31 @@ function renderMine(){
     cell.addEventListener('contextmenu',e=>{e.preventDefault();mineFlag(r,c);});
     cell.addEventListener('touchstart',()=>{cell._th=setTimeout(()=>{mineFlag(r,c);},400);},{passive:true});
     cell.addEventListener('touchend',()=>{clearTimeout(cell._th);},{passive:true});
-    if(v>0&&mRevealed[r][c])cell.classList.add('mc'+mBoard[r][c]);
+    if(mRevealed[r][c]&&mBoard[r][c]>0)cell.classList.add('mc'+mBoard[r][c]);
     b.appendChild(cell);
   }
 }
 function mineClick(r,c){
   if(mFlagged[r][c]||mRevealed[r][c])return;
   if(mFirst){placeMines(r,c);mFirst=false;mTimerInt=setInterval(()=>{mTimer++;document.getElementById('mine-timer').textContent=mTimer;},1000);}
-  if(mBoard[r][c]==='M'){revealAll();document.getElementById('mine-msg').textContent='💥 Boom! Game over.';clearInterval(mTimerInt);return;}
+  if(mBoard[r][c]==='M'){revealAll();document.getElementById('mine-msg').textContent='💥 Boom! Game over. Try again!';clearInterval(mTimerInt);return;}
   flood(r,c);renderMine();checkWin();
 }
 function flood(r,c){if(r<0||r>=mR||c<0||c>=mC||mRevealed[r][c]||mFlagged[r][c])return;mRevealed[r][c]=true;if(mBoard[r][c]===0)for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++)flood(r+dr,c+dc);}
 function mineFlag(r,c){if(mRevealed[r][c])return;mFlagged[r][c]=!mFlagged[r][c];document.getElementById('mine-count').textContent=mM-mFlagged.flat().filter(Boolean).length;renderMine();}
 function revealAll(){for(let r=0;r<mR;r++)for(let c=0;c<mC;c++)mRevealed[r][c]=true;renderMine();}
-function checkWin(){let safe=0;for(let r=0;r<mR;r++)for(let c=0;c<mC;c++)if(mBoard[r][c]!=='M'&&mRevealed[r][c])safe++;if(safe===mR*mC-mM){clearInterval(mTimerInt);document.getElementById('mine-msg').textContent='🎉 You won in '+mTimer+'s!';}}
+function checkWin(){let safe=0;for(let r=0;r<mR;r++)for(let c=0;c<mC;c++)if(mBoard[r][c]!=='M'&&mRevealed[r][c])safe++;if(safe===mR*mC-mM){clearInterval(mTimerInt);document.getElementById('mine-msg').textContent='🎉 You won in '+mTimer+'s!';showNameModal('mine',mTimer,'s',true,()=>{renderLB('mine',document.getElementById('mine-lb'),true,'s');});}}
 initMine();
 
 /* ===================== TYPING ===================== */
 const typingTexts={easy:['the quick brown fox jumps over the lazy dog near the river bank on a sunny afternoon','software is the invisible force that powers our modern world from apps to operating systems','kampala is a vibrant city full of energy creativity and opportunities for everyone who lives there','technology built for people should be simple enough that anyone can use it without reading a manual'],medium:['network security requires constant vigilance against evolving threats including phishing malware and social engineering','database management systems use structured query language to store retrieve and manipulate vast amounts of data','custom software development begins with deep discovery sessions to map workflows and define measurable outcomes'],hard:['SELECT p.name, COUNT(o.id) AS order_count FROM patients p LEFT JOIN orders o ON p.id = o.patient_id GROUP BY p.id','import tkinter as tk; root = tk.Tk(); root.title("CyberSoft"); root.geometry("800x600"); root.mainloop()','function debounce(fn, delay) { let timer; return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), delay); }; }']};
 let tDiff='easy',tText='',tPos=0,tErrors=0,tStarted=false,tTimer=60,tTimerInt2,tBestWpm=0,tCharsTyped=0;
 function setTypingDiff(d,el){tDiff=d;document.querySelectorAll('.typing-diff').forEach(b=>b.classList.remove('on'));el.classList.add('on');resetTyping();}
-function resetTyping(){clearInterval(tTimerInt2);tStarted=false;tPos=0;tErrors=0;tCharsTyped=0;const texts=typingTexts[tDiff];tText=texts[Math.floor(Math.random()*texts.length)];tTimer=60;document.getElementById('t-wpm').textContent='0';document.getElementById('t-acc').textContent='100';document.getElementById('t-time').textContent='60';document.getElementById('t-progress').style.width='0%';document.getElementById('typing-cta').style.display='block';renderTyping();}
+function resetTyping(){clearInterval(tTimerInt2);tStarted=false;tPos=0;tErrors=0;tCharsTyped=0;const texts=typingTexts[tDiff];tText=texts[Math.floor(Math.random()*texts.length)];tTimer=60;document.getElementById('t-wpm').textContent='0';document.getElementById('t-acc').textContent='100';document.getElementById('t-time').textContent='60';document.getElementById('t-progress').style.width='0%';document.getElementById('typing-cta').style.display='block';renderTyping();renderLB('typing',document.getElementById('typing-lb'));}
 function renderTyping(){let h='';for(let i=0;i<tText.length;i++){if(i<tPos)h+=`<span class="t-correct">${tText[i]==' '?'&nbsp;':tText[i]}</span>`;else if(i===tPos)h+=`<span class="t-cursor"></span><span class="t-pending">${tText[i]==' '?'&nbsp;':tText[i]}</span>`;else h+=`<span class="t-pending">${tText[i]==' '?'&nbsp;':tText[i]}</span>`;}if(tPos>=tText.length)h+=`<span class="t-cursor"></span>`;document.getElementById('typing-display').innerHTML=h;}
 function startTyping(){document.getElementById('typing-cta').style.display='none';document.getElementById('typing-input').value='';focusTyping();}
 function focusTyping(){const inp=document.getElementById('typing-input');inp.focus();if(!tStarted&&document.getElementById('typing-cta').style.display==='none'){tStarted=true;tTimerInt2=setInterval(()=>{tTimer--;document.getElementById('t-time').textContent=tTimer;const elapsed=60-tTimer;const wpm=elapsed>0?Math.round((tPos/5)/(elapsed/60)):0;document.getElementById('t-wpm').textContent=wpm;document.getElementById('t-progress').style.width=(tPos/tText.length*100)+'%';if(tTimer<=0){clearInterval(tTimerInt2);finishTyping();}},1000);}}
-function finishTyping(){const wpm=Math.round((tPos/5)/1);if(wpm>tBestWpm){tBestWpm=wpm;document.getElementById('t-streak').textContent=tBestWpm;}document.getElementById('t-wpm').textContent=wpm;document.getElementById('typing-display').innerHTML+=`<div style="margin-top:14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--gold)">⏱ Time up! ${wpm} WPM</div>`;}
+function finishTyping(){const elapsed=60-tTimer||60;const wpm=Math.round((tPos/5)/(elapsed/60));if(wpm>tBestWpm){tBestWpm=wpm;document.getElementById('t-streak').textContent=tBestWpm;}document.getElementById('t-wpm').textContent=wpm;document.getElementById('typing-display').innerHTML+=`<div style="margin-top:14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--gold)">⏱ Done! ${wpm} WPM · ${document.getElementById('t-acc').textContent}% accuracy</div>`;showNameModal('typing',wpm,' WPM',false,()=>{renderLB('typing',document.getElementById('typing-lb'));});}
 document.getElementById('typing-input').addEventListener('input',function(){if(!tStarted)return;const ch=this.value.slice(-1);this.value='';if(ch===tText[tPos]){tPos++;tCharsTyped++;}else if(ch){tErrors++;tCharsTyped++;}const acc=tCharsTyped>0?Math.round((tCharsTyped-tErrors)/tCharsTyped*100):100;document.getElementById('t-acc').textContent=acc;renderTyping();document.getElementById('t-progress').style.width=(tPos/tText.length*100)+'%';if(tPos>=tText.length){clearInterval(tTimerInt2);finishTyping();}});
 resetTyping();
 
@@ -1130,9 +1308,121 @@ let scCat='tech',scWord='',scScore=0,scStreak=0,scTimerVal=30,scTimerInt3,scRunn
 function scramble(w){let a=w.split('');for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.join('');}
 function setScrambleCat(cat,el){scCat=cat;document.querySelectorAll('.scramble-cat-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
 function nextWord(){const words=scrambleWords[scCat];scWord=words[Math.floor(Math.random()*words.length)].toUpperCase();let sc=scramble(scWord);while(sc===scWord&&scWord.length>2)sc=scramble(scWord);document.getElementById('sc-word').textContent=sc.split('').join(' ');document.getElementById('sc-hint').textContent=`Category: ${scCat.toUpperCase()} · ${scWord.length} letters`;document.getElementById('sc-input').value='';document.getElementById('sc-result').textContent='';document.getElementById('sc-input').focus();}
-function startScramble(){clearInterval(scTimerInt3);scScore=0;scStreak=0;scTimerVal=30;scRunning=true;document.getElementById('sc-score').textContent='0';document.getElementById('sc-streak').textContent='0';document.getElementById('sc-timer').textContent='30';nextWord();scTimerInt3=setInterval(()=>{scTimerVal--;document.getElementById('sc-timer').textContent=scTimerVal;if(scTimerVal<=0){clearInterval(scTimerInt3);scRunning=false;document.getElementById('sc-word').textContent='— — —';document.getElementById('sc-result').innerHTML=`<span style="color:var(--gold)">⏱ Time up! Score: ${scScore}</span>`;document.getElementById('sc-hint').textContent='Press Start to play again';}},1000);}
+function startScramble(){clearInterval(scTimerInt3);scScore=0;scStreak=0;scTimerVal=30;scRunning=true;document.getElementById('sc-score').textContent='0';document.getElementById('sc-streak').textContent='0';document.getElementById('sc-timer').textContent='30';renderLB('scramble',document.getElementById('scramble-lb'));nextWord();scTimerInt3=setInterval(()=>{scTimerVal--;document.getElementById('sc-timer').textContent=scTimerVal;if(scTimerVal<=0){clearInterval(scTimerInt3);scRunning=false;document.getElementById('sc-word').textContent='— — —';document.getElementById('sc-result').innerHTML=`<span style="color:var(--gold)">⏱ Time up! Score: ${scScore}</span>`;document.getElementById('sc-hint').textContent='Press Start to play again';if(scScore>0)showNameModal('scramble',scScore,' pts',false,()=>{renderLB('scramble',document.getElementById('scramble-lb'));});}},1000);}
 function skipScramble(){if(scRunning){scStreak=0;document.getElementById('sc-streak').textContent=0;nextWord();}}
 document.getElementById('sc-input').addEventListener('keydown',function(e){if(e.key==='Enter'){const ans=this.value.trim().toUpperCase();if(ans===scWord){const pts=scWord.length*10;scScore+=pts+(scStreak>0?scStreak*5:0);scStreak++;document.getElementById('sc-score').textContent=scScore;document.getElementById('sc-streak').textContent=scStreak;document.getElementById('sc-result').innerHTML=`<span style="color:var(--green)">✓ Correct! +${pts} pts 🎉</span>`;if(scRunning)setTimeout(nextWord,600);}else{scStreak=0;document.getElementById('sc-streak').textContent=0;document.getElementById('sc-result').innerHTML=`<span style="color:var(--red)">✗ Wrong. Answer: ${scWord}</span>`;if(scRunning)setTimeout(nextWord,1200);}}});
+
+/* ===================== SNAKE ===================== */
+let snCanvas,snCtx,snSnake,snDir_dx,snDir_dy,snFood,snSpecialFood,snSnakeScore,snBest=0,snLevel,snGameOver,snPaused,snLoopId,snSpeed=150,snCols=19,snRows=19,snCell;
+function setSnakeSpeed(s,el){snSpeed=s;document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('on'));el.classList.add('on');if(!snGameOver)initSnake();}
+function initSnake(){
+  clearTimeout(snLoopId);
+  snCanvas=document.getElementById('snake-canvas');snCtx=snCanvas.getContext('2d');
+  const size=Math.min(380,window.innerWidth-48);snCanvas.width=size;snCanvas.height=size;snCell=Math.floor(size/snCols);
+  snSnake=[{x:9,y:9}];snDir_dx=1;snDir_dy=0;
+  snSnakeScore=0;snLevel=1;snGameOver=false;snPaused=false;
+  document.getElementById('sn-score').textContent='0';
+  document.getElementById('sn-level').textContent='1';
+  document.getElementById('sn-pause-btn').textContent='⏸';
+  placeFood();placeSpecialFood();
+  document.getElementById('snake-msg').textContent='Use arrow keys, WASD or D-pad to move';
+  snLoopId=setTimeout(snTick,snSpeed);
+  renderLB('snake',document.getElementById('snake-lb'));
+}
+function placeFood(){snFood={x:Math.floor(Math.random()*snCols),y:Math.floor(Math.random()*snRows),type:'normal'};}
+function placeSpecialFood(){if(Math.random()<0.3)snSpecialFood={x:Math.floor(Math.random()*snCols),y:Math.floor(Math.random()*snRows),timer:30};else snSpecialFood=null;}
+function snDir(dx,dy){if(snGameOver){initSnake();return;}if(snPaused){snPaused=false;document.getElementById('sn-pause-btn').textContent='⏸';snLoopId=setTimeout(snTick,snSpeed);return;}if(dx===0&&snDir_dy===0||dy===0&&snDir_dx===0)return;snDir_dx=dx;snDir_dy=dy;}
+function snTogglePause(){if(snGameOver){initSnake();return;}snPaused=!snPaused;document.getElementById('sn-pause-btn').textContent=snPaused?'▶':'⏸';if(!snPaused)snLoopId=setTimeout(snTick,snSpeed);}
+function snTick(){
+  if(snGameOver||snPaused)return;
+  const head={x:snSnake[0].x+snDir_dx,y:snSnake[0].y+snDir_dy};
+  if(head.x<0||head.x>=snCols||head.y<0||head.y>=snRows||snSnake.some(s=>s.x===head.x&&s.y===head.y)){
+    snGameOver=true;
+    document.getElementById('snake-msg').textContent=`💀 Game over! Score: ${snSnakeScore} — tap D-pad to restart`;
+    drawSnake();
+    if(snSnakeScore>snBest){snBest=snSnakeScore;document.getElementById('sn-best').textContent=snBest;}
+    if(snSnakeScore>0)showNameModal('snake',snSnakeScore,' pts',false,()=>{renderLB('snake',document.getElementById('snake-lb'));});
+    return;
+  }
+  snSnake.unshift(head);
+  let ate=false;
+  if(head.x===snFood.x&&head.y===snFood.y){ate=true;snSnakeScore+=10*snLevel;placeFood();if(snSnakeScore%(50*snLevel)===0){snLevel++;document.getElementById('sn-level').textContent=snLevel;}if(Math.random()<0.2)placeSpecialFood();}
+  else if(snSpecialFood&&head.x===snSpecialFood.x&&head.y===snSpecialFood.y){ate=true;snSnakeScore+=50*snLevel;snSpecialFood=null;}
+  if(!ate)snSnake.pop();
+  if(snSnakeScore>snBest){snBest=snSnakeScore;document.getElementById('sn-best').textContent=snBest;}
+  document.getElementById('sn-score').textContent=snSnakeScore;
+  if(snSpecialFood){snSpecialFood.timer--;if(snSpecialFood.timer<=0)snSpecialFood=null;}
+  drawSnake();
+  const speed=Math.max(60,snSpeed-snLevel*5);
+  snLoopId=setTimeout(snTick,speed);
+}
+function drawSnake(){
+  const ctx=snCtx,cs=snCell;
+  ctx.fillStyle='#0d1117';ctx.fillRect(0,0,snCanvas.width,snCanvas.height);
+  // Grid
+  ctx.strokeStyle='rgba(255,255,255,0.03)';ctx.lineWidth=0.5;
+  for(let x=0;x<snCols;x++){ctx.beginPath();ctx.moveTo(x*cs,0);ctx.lineTo(x*cs,snCanvas.height);ctx.stroke();}
+  for(let y=0;y<snRows;y++){ctx.beginPath();ctx.moveTo(0,y*cs);ctx.lineTo(snCanvas.width,y*cs);ctx.stroke();}
+  // Food
+  ctx.fillStyle='#ff5252';ctx.shadowColor='#ff5252';ctx.shadowBlur=10;
+  ctx.beginPath();ctx.arc(snFood.x*cs+cs/2,snFood.y*cs+cs/2,cs*0.38,0,Math.PI*2);ctx.fill();
+  // Special food
+  if(snSpecialFood){
+    const pulse=0.8+0.2*Math.sin(Date.now()/150);
+    ctx.fillStyle='#ffd166';ctx.shadowColor='#ffd166';ctx.shadowBlur=15;
+    ctx.beginPath();ctx.arc(snSpecialFood.x*cs+cs/2,snSpecialFood.y*cs+cs/2,cs*0.42*pulse,0,Math.PI*2);ctx.fill();
+    // Timer ring
+    ctx.strokeStyle='rgba(255,209,102,0.4)';ctx.lineWidth=1.5;ctx.shadowBlur=0;
+    ctx.beginPath();ctx.arc(snSpecialFood.x*cs+cs/2,snSpecialFood.y*cs+cs/2,cs*0.46,0,Math.PI*2*(snSpecialFood.timer/30));ctx.stroke();
+  }
+  ctx.shadowBlur=0;
+  // Snake body
+  snSnake.forEach((s,i)=>{
+    const t=i/snSnake.length;
+    const r=Math.floor(0+(1-t)*0);const g=Math.floor(230-(1-t)*80);const b=Math.floor(118-(1-t)*70);
+    ctx.fillStyle=`rgb(${r},${g},${b})`;
+    if(i===0){ctx.shadowColor='rgba(0,230,118,0.5)';ctx.shadowBlur=8;}
+    ctx.fillRect(s.x*cs+1,s.y*cs+1,cs-2,cs-2);
+    ctx.shadowBlur=0;
+  });
+  // Eyes on head
+  if(snSnake.length>0){
+    const h=snSnake[0];
+    ctx.fillStyle='#fff';
+    ctx.beginPath();ctx.arc(h.x*cs+cs*0.35,h.y*cs+cs*0.35,cs*0.13,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(h.x*cs+cs*0.65,h.y*cs+cs*0.35,cs*0.13,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#111';
+    ctx.beginPath();ctx.arc(h.x*cs+cs*0.37,h.y*cs+cs*0.37,cs*0.07,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(h.x*cs+cs*0.67,h.y*cs+cs*0.37,cs*0.07,0,Math.PI*2);ctx.fill();
+  }
+  if(snGameOver){
+    ctx.fillStyle='rgba(0,0,0,0.6)';ctx.fillRect(0,0,snCanvas.width,snCanvas.height);
+    ctx.fillStyle='#f0b429';ctx.font=`bold ${cs*1.5}px Playfair Display,serif`;ctx.textAlign='center';
+    ctx.fillText('GAME OVER',snCanvas.width/2,snCanvas.height/2-cs);
+    ctx.fillStyle='#fff';ctx.font=`${cs*0.7}px Space Mono,monospace`;
+    ctx.fillText('Score: '+snSnakeScore,snCanvas.width/2,snCanvas.height/2+cs*0.5);
+    ctx.fillText('Tap ▶ to restart',snCanvas.width/2,snCanvas.height/2+cs*1.8);
+  }
+}
+// Keyboard controls for snake
+document.addEventListener('keydown',e=>{
+  const map={'ArrowLeft':[-1,0],'ArrowRight':[1,0],'ArrowUp':[0,-1],'ArrowDown':[0,1],'a':[-1,0],'d':[1,0],'w':[0,-1],'s':[0,1]};
+  if(map[e.key]){e.preventDefault();snDir(map[e.key][0],map[e.key][1]);}
+  if(e.key===' '){e.preventDefault();snTogglePause();}
+});
+// Swipe controls
+let touchSX,touchSY;
+document.getElementById('snake-canvas').addEventListener('touchstart',e=>{touchSX=e.touches[0].clientX;touchSY=e.touches[0].clientY;},{passive:true});
+document.getElementById('snake-canvas').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchSX,dy=e.changedTouches[0].clientY-touchSY;
+  if(Math.abs(dx)>Math.abs(dy)){snDir(dx>0?1:-1,0);}else{snDir(0,dy>0?1:-1);}
+},{passive:true});
+initSnake();
+
+/* Keyboard for chess arrow fix */
+document.addEventListener('keydown',e=>{
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)&&document.getElementById('panel-snake').classList.contains('active'))return;
+});
 </script>
 </body>
 </html>
